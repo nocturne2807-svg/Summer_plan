@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summer's Life Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --card: #FFFFFF;
+    --text: #1a1a18;
+    --text2: #6b6b65;
+    --text3: #9c9c95;
+    --border: #e8e6df;
+    --accent: #2d5a3d;
+    --accent-light: #e8f0eb;
+    --coral: #d85a30;
+    --coral-light: #fef0eb;
+    --blue: #2a6496;
+    --blue-light: #eaf2fa;
+    --pink: #b84c6f;
+    --pink-light: #fbedf2;
+    --amber: #9a7216;
+    --amber-light: #fdf6e6;
+    --purple: #6b5aad;
+    --purple-light: #f0eefe;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 32px 80px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 56px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  .header-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 36px;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .header h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .header-sub {
+    font-size: 14px;
+    color: var(--text2);
+    font-weight: 300;
+  }
+
+  /* Section */
+  .section { margin-bottom: 48px; }
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    color: var(--text3);
+    margin-bottom: 4px;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  /* 3 Pillars */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  .pillar {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .pillar::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .pillar:nth-child(1)::before { background: var(--accent); }
+  .pillar:nth-child(2)::before { background: var(--coral); }
+  .pillar:nth-child(3)::before { background: var(--blue); }
+  .pillar-label { font-size: 11px; color: var(--text3); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+  .pillar-value { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+  .pillar:nth-child(1) .pillar-value { color: var(--accent); }
+  .pillar:nth-child(2) .pillar-value { color: var(--coral); }
+  .pillar:nth-child(3) .pillar-value { color: var(--blue); }
+  .pillar-desc { font-size: 12px; color: var(--text2); }
+
+  .mindset {
+    background: var(--accent-light);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 13px;
+    color: var(--accent);
+    line-height: 1.6;
+  }
+  .mindset strong { font-weight: 700; }
+
+  /* Job Options */
+  .job-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .job-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .job-card.featured {
+    border: 2px solid var(--accent);
+    grid-column: 1 / -1;
+    position: relative;
+  }
+  .featured-badge {
+    position: absolute;
+    top: -1px;
+    right: 20px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 14px;
+    border-radius: 0 0 8px 8px;
+  }
+  .job-name { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+  .job-sub { font-size: 12px; color: var(--text3); margin-bottom: 12px; }
+  .pro-con { font-size: 13px; color: var(--text2); line-height: 1.8; }
+  .pro-con .pro::before { content: '+'; color: var(--accent); font-weight: 700; margin-right: 6px; }
+  .pro-con .con::before { content: '−'; color: var(--coral); font-weight: 700; margin-right: 6px; }
+  .stars { margin-top: 12px; display: flex; gap: 16px; font-size: 12px; color: var(--text3); }
+
+  .verdict-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 12px 12px 0;
+    padding: 18px 20px;
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.8;
+  }
+  .verdict-box strong { color: var(--text); }
+
+  /* Side Business */
+  .side-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .side-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .side-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .side-card p { font-size: 13px; color: var(--text2); line-height: 1.7; }
+  .pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin: 2px 2px;
+  }
+  .pill-green { background: var(--accent-light); color: var(--accent); }
+  .pill-coral { background: var(--coral-light); color: var(--coral); }
+
+  .caution {
+    background: var(--coral-light);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: var(--coral);
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+
+  /* Platform cards */
+  .platform {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .platform::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 4px;
+  }
+  .platform.plat-insta::before { background: var(--pink); }
+  .platform.plat-blog::before { background: var(--accent); }
+  .platform.plat-yt::before { background: var(--coral); }
+  .platform .plat-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .plat-order {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .plat-insta .plat-order { background: var(--pink); }
+  .plat-blog .plat-order { background: var(--accent); }
+  .plat-yt .plat-order { background: var(--coral); }
+  .plat-name { font-size: 17px; font-weight: 700; }
+  .plat-tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+  .plat-insta .plat-tag { background: var(--pink-light); color: var(--pink); }
+  .plat-blog .plat-tag { background: var(--accent-light); color: var(--accent); }
+  .plat-yt .plat-tag { background: var(--coral-light); color: var(--coral); }
+
+  .spec-table {
+    width: 100%;
+    font-size: 13px;
+    border-collapse: collapse;
+    margin-bottom: 14px;
+  }
+  .spec-table td {
+    padding: 5px 0;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+  }
+  .spec-table td:first-child {
+    color: var(--text3);
+    width: 90px;
+    font-size: 12px;
+    padding-right: 12px;
+  }
+  .spec-table td:last-child { color: var(--text2); }
+  .spec-table tr:last-child td { border-bottom: none; }
+
+  .effort-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .effort-label { font-size: 12px; color: var(--text3); min-width: 54px; }
+  .effort-track { flex: 1; height: 6px; background: #eee; border-radius: 3px; overflow: hidden; }
+  .effort-fill { height: 100%; border-radius: 3px; }
+  .effort-val { font-size: 11px; color: var(--text3); min-width: 30px; text-align: right; }
+
+  .plat-fit {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+  .plat-fit strong { color: var(--text); }
+
+  /* Multi-use */
+  .multi-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .multi-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+  }
+  .flow-step {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+  }
+  .flow-arrow { color: var(--text3); font-size: 18px; }
+  .multi-example {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.8;
+    margin-top: 12px;
+  }
+  .multi-example strong { color: var(--text); }
+
+  /* Roadmap */
+  .roadmap { position: relative; padding-left: 28px; }
+  .roadmap::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--blue), var(--accent), var(--amber), var(--coral));
+    border-radius: 1px;
+  }
+  .road-step {
+    position: relative;
+    margin-bottom: 24px;
+    padding: 16px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .road-step:last-child { margin-bottom: 0; }
+  .road-dot {
+    position: absolute;
+    left: -25px;
+    top: 20px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+  }
+  .road-step:nth-child(1) .road-dot { background: var(--blue); }
+  .road-step:nth-child(2) .road-dot { background: var(--accent); }
+  .road-step:nth-child(3) .road-dot { background: var(--amber); }
+  .road-step:nth-child(4) .road-dot { background: var(--coral); }
+  .road-phase { font-size: 11px; color: var(--text3); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; }
+  .road-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .road-tasks { font-size: 13px; color: var(--text2); line-height: 1.8; }
+  .road-tasks span { display: block; padding-left: 18px; position: relative; }
+  .road-tasks span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid var(--border);
+    border-radius: 3px;
+  }
+
+  /* Status */
+  .status-table {
+    width: 100%;
+    font-size: 13px;
+    border-collapse: collapse;
+  }
+  .status-table th {
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--text3);
+    letter-spacing: 0.04em;
+    padding: 8px 0;
+    border-bottom: 2px solid var(--border);
+  }
+  .status-table td {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  .status-table tr:last-child td { border-bottom: none; }
+  .status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .s-red { background: var(--coral); }
+  .s-amber { background: var(--amber); }
+  .s-green { background: var(--accent); }
+  .s-gray { background: var(--text3); }
+
+  /* Footer */
+  .footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 12px;
+    color: var(--text3);
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { padding: 20px; }
+    .road-step, .platform, .job-card, .pillar, .side-card, .multi-box { break-inside: avoid; }
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 32px 16px 48px; }
+    .header h1 { font-size: 26px; }
+    .pillars, .job-grid, .side-grid { grid-template-columns: 1fr; }
+    .multi-flow { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-eyebrow">Life Plan Dashboard</div>
+    <h1>Summer's <em>Blueprint</em></h1>
+    <div class="header-sub">주업 · 부업 · 브랜딩 — 전체 로드맵</div>
+  </div>
+
+  <!-- 1. 핵심 3축 -->
+  <div class="section">
+    <div class="section-num">01</div>
+    <div class="section-title">핵심 3가지 축</div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-label">주업</div>
+        <div class="pillar-value">고정 급여</div>
+        <div class="pillar-desc">시간 여유 있는 직장</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-label">부업</div>
+        <div class="pillar-value">+100만원</div>
+        <div class="pillar-desc">숏폼 단건 의뢰</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-label">브랜딩</div>
+        <div class="pillar-value">나만의 채널</div>
+        <div class="pillar-desc">인스타 → 블로그 → 유튜브</div>
+      </div>
+    </div>
+    <div class="mindset">
+      <strong>마인드셋 전환:</strong> 일에서 자아실현을 찾는 건 내려놓기로 함. 주업은 돈, 브랜딩에서 나를 찾는다.
+    </div>
+  </div>
+
+  <!-- 2. 주업 -->
+  <div class="section">
+    <div class="section-num">02</div>
+    <div class="section-title">주업 — 직장 옵션 비교</div>
+    <div class="job-grid">
+      <div class="job-card">
+        <div class="job-name">A. 사무직 / 교직원</div>
+        <div class="job-sub">시간만 떼우면 되는 안정형</div>
+        <div class="pro-con">
+          <div class="pro">칼퇴 보장, 에너지 보존</div>
+          <div class="pro">퇴근 후 부업·공부 가능</div>
+          <div class="pro">멘탈 소모 최소</div>
+          <div class="con">커리어 단절감</div>
+          <div class="con">포트폴리오에 도움 안 됨</div>
+        </div>
+        <div class="stars">시간 ★★★ · 성장 ★☆☆</div>
+      </div>
+      <div class="job-card">
+        <div class="job-name">B. 유튜브 편집 취업</div>
+        <div class="job-sub">숏폼 or 롱폼 채널 소속</div>
+        <div class="pro-con">
+          <div class="pro">편집 실력 성장 + 포폴</div>
+          <div class="pro">트렌드 감각 유지</div>
+          <div class="con">야근·번아웃 리스크</div>
+          <div class="con">퇴근 후 또 편집 = 체력 바닥</div>
+          <div class="con">주업+부업 동일 작업 피로</div>
+        </div>
+        <div class="stars">시간 ★☆☆ · 성장 ★★★</div>
+      </div>
+      <div class="job-card featured">
+        <div class="featured-badge">추천</div>
+        <div class="job-name">C. 부동산 유튜브 취업</div>
+        <div class="job-sub">편집 + 관심 분야 시너지</div>
+        <div class="pro-con">
+          <div class="pro">일하면서 부동산 공부 (공부 = 근무시간)</div>
+          <div class="pro">편집 포트폴리오도 쌓임</div>
+          <div class="pro">인스타 콘텐츠 소재 자동 수급</div>
+          <div class="pro">부동산 업계 인맥·정보 접근</div>
+          <div class="con">채널 규모에 따라 업무량 변동</div>
+          <div class="con">편집 피로는 여전</div>
+        </div>
+        <div class="stars">시간 ★★☆ · 성장 ★★★</div>
+      </div>
+    </div>
+    <div class="verdict-box">
+      <strong>판단 기준:</strong> C를 찾을 수 있으면 최선. 못 찾으면 A(사무직)를 가져가고 부업으로 편집하는 게, B(편집 회사)에서 지쳐서 아무것도 못 하는 것보다 낫다.<br>
+      <strong>숏폼 vs 롱폼:</strong> 취업이라면 <strong>롱폼 채널</strong>이 유리. 숏폼 전문은 대량 생산 체제라 야근 잦고, 롱폼은 주 1~2편이라 리듬 안정적.<br>
+      <strong>타겟:</strong> 1인 크리에이터 보조 or 소규모 채널 (구독자 5~30만)
+    </div>
+  </div>
+
+  <!-- 3. 부업 -->
+  <div class="section">
+    <div class="section-num">03</div>
+    <div class="section-title">부업 — 수입 추가</div>
+    <div class="side-grid">
+      <div class="side-card" style="border-left: 3px solid var(--accent);">
+        <h4>현재 계획</h4>
+        <p>숏폼 영상 단건 의뢰 받아서 작업<br>포트폴리오 축적 → 단가 상승</p>
+        <div style="margin-top: 10px;">
+          <span class="pill pill-green">편집 스킬 활용</span>
+          <span class="pill pill-green">바로 진입 가능</span>
+        </div>
+      </div>
+      <div class="side-card">
+        <h4>검토 후 보류한 것들</h4>
+        <p>동물 AI · 플레이리스트 · 시니어 롱폼<br>쇼핑 숏폼 · 과일 위탁 · 에어비앤비<br>유튜브 사업화</p>
+        <div class="caution">쇼핑 숏폼은 진심이 없다고 느껴서 보류 → "콘텐츠는 가치를 전달해야 한다"는 기준 확립</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 브랜딩 -->
+  <div class="section">
+    <div class="section-num">04</div>
+    <div class="section-title">퍼스널 브랜딩 — 플랫폼 전략</div>
+    <div class="mindset" style="margin-bottom: 20px; background: var(--purple-light); color: var(--purple);">
+      <strong>핵심 콘셉트:</strong> 예술 전공자가 궁핍한 현실에서 재테크로 성장해가는 과정 (성장형 계정)
+    </div>
+
+    <!-- Instagram -->
+    <div class="platform plat-insta">
+      <div class="plat-head">
+        <div class="plat-order">1</div>
+        <div class="plat-name">인스타그램</div>
+        <span class="plat-tag">비주얼 · 발견형</span>
+      </div>
+      <table class="spec-table">
+        <tr><td>핵심 포맷</td><td>카드뉴스(정보), 릴스(15~60초), 스토리(일상)</td></tr>
+        <tr><td>제작 시간</td><td>카드뉴스 30분~1시간 / 릴스 1~2시간</td></tr>
+        <tr><td>성장 방식</td><td>릴스 알고리즘 → 비팔로워 노출, 해시태그·탐색탭</td></tr>
+        <tr><td>수익화</td><td>협찬, 제휴 마케팅 (팔로워 1만부터 현실적)</td></tr>
+        <tr><td>잘 되는 유형</td><td>성장일기, 정보 요약, before/after, 루틴 공유</td></tr>
+      </table>
+      <div class="effort-bar">
+        <span class="effort-label">제작 부담</span>
+        <div class="effort-track"><div class="effort-fill" style="width:30%;background:var(--pink);"></div></div>
+        <span class="effort-val">낮음</span>
+      </div>
+      <div class="plat-fit">
+        <strong>Summer 궁합:</strong> 부동산 경매 카드뉴스 + 요리 릴스 = 가장 빠르게 시작 가능. 카드뉴스는 Canva로도 가능, 릴스는 편집 실력이 차별화 포인트. "예술 전공 재테크 성장기" 콘셉트에 최적.
+      </div>
+    </div>
+
+    <!-- Blog -->
+    <div class="platform plat-blog">
+      <div class="plat-head">
+        <div class="plat-order">2</div>
+        <div class="plat-name">블로그</div>
+        <span class="plat-tag">텍스트 · 검색형</span>
+      </div>
+      <table class="spec-table">
+        <tr><td>핵심 포맷</td><td>에세이, 리뷰, 정보글 (1,000~3,000자)</td></tr>
+        <tr><td>제작 시간</td><td>글 하나 30분~1시간 (사진 포함 시 +30분)</td></tr>
+        <tr><td>성장 방식</td><td>네이버/구글 검색 유입, 꾸준한 글 축적</td></tr>
+        <tr><td>수익화</td><td>애드포스트, 체험단, 원고료 (월 30만원 현실적 상한)</td></tr>
+        <tr><td>잘 되는 유형</td><td>부동산 정보, 맛집, 제품 리뷰, 일상 에세이</td></tr>
+      </table>
+      <div class="effort-bar">
+        <span class="effort-label">제작 부담</span>
+        <div class="effort-track"><div class="effort-fill" style="width:20%;background:var(--accent);"></div></div>
+        <span class="effort-val">최저</span>
+      </div>
+      <div class="plat-fit">
+        <strong>Summer 궁합:</strong> 개인 글쓰기 욕구를 채우기 최적. 인스타 카드뉴스의 확장판으로 쓰면 멀티유즈 가능 — "경매 공부 3주차 정리"를 인스타는 카드뉴스, 블로그는 상세 후기로.
+      </div>
+    </div>
+
+    <!-- YouTube -->
+    <div class="platform plat-yt">
+      <div class="plat-head">
+        <div class="plat-order">3</div>
+        <div class="plat-name">유튜브</div>
+        <span class="plat-tag">영상 · 몰입형</span>
+      </div>
+      <table class="spec-table">
+        <tr><td>핵심 포맷</td><td>브이로그(8~15분), 숏츠(60초), 정보형 롱폼</td></tr>
+        <tr><td>제작 시간</td><td>촬영 반나절 + 편집 4~8시간</td></tr>
+        <tr><td>성장 방식</td><td>검색(SEO) + 추천 알고리즘, 롱테일 효과 큼</td></tr>
+        <tr><td>수익화</td><td>애드센스(구독 1천+시청 4천시간), 협찬, 멤버십</td></tr>
+        <tr><td>잘 되는 유형</td><td>라이프스타일, 정보 전달, 루틴, 공간·인테리어</td></tr>
+      </table>
+      <div class="effort-bar">
+        <span class="effort-label">제작 부담</span>
+        <div class="effort-track"><div class="effort-fill" style="width:85%;background:var(--coral);"></div></div>
+        <span class="effort-val">높음</span>
+      </div>
+      <div class="plat-fit">
+        <strong>Summer 궁합:</strong> 레퍼런스(92송사원, 리틀타네, 크림팍)가 모두 라이프스타일 브이로그. 편집 퀄리티가 곧 경쟁력이지만, 주 1편이라도 주말 하루가 통째로 날아감. <strong>가장 마지막에 시작.</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. 멀티유즈 -->
+  <div class="section">
+    <div class="section-num">05</div>
+    <div class="section-title">멀티유즈 전략</div>
+    <div class="multi-box">
+      <p style="font-size:13px;color:var(--text2);margin-bottom:4px;">각 플랫폼 콘텐츠가 전부 다르면 멀티유즈가 아니라 3개 채널을 따로 운영하는 것.</p>
+      <p style="font-size:14px;font-weight:700;">하나의 소재로 3개 콘텐츠를 만드는 구조:</p>
+      <div class="multi-flow">
+        <div class="flow-step" style="background:var(--pink-light);color:var(--pink);">인스타 카드뉴스<br><span style="font-size:11px;font-weight:400;">핵심 5장 요약</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step" style="background:var(--accent-light);color:var(--accent);">블로그 글<br><span style="font-size:11px;font-weight:400;">상세 버전 + 내 생각</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step" style="background:var(--coral-light);color:var(--coral);">유튜브 브이로그<br><span style="font-size:11px;font-weight:400;">과정 전체를 영상으로</span></div>
+      </div>
+      <div class="multi-example">
+        <strong>예시:</strong> "첫 경매 입찰 후기"<br>
+        → 인스타: 입찰 과정 핵심 포인트 카드뉴스<br>
+        → 블로그: 상세 후기 + 느낀 점 에세이<br>
+        → 유튜브: 입찰 당일 브이로그
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. 로드맵 -->
+  <div class="section">
+    <div class="section-num">06</div>
+    <div class="section-title">실행 로드맵</div>
+    <div class="roadmap">
+      <div class="road-step">
+        <div class="road-dot"></div>
+        <div class="road-phase">Phase 1 · 지금 ~ 취업까지</div>
+        <div class="road-title">구직 집중 + 부업 테스트</div>
+        <div class="road-tasks">
+          <span>구직에 집중 (부동산 유튜브 채널 위주 서치)</span>
+          <span>숏폼 단건 의뢰 1~2건만 받아보기</span>
+          <span>브랜딩 채널은 아직 시작 X — 소재만 메모</span>
+        </div>
+      </div>
+      <div class="road-step">
+        <div class="road-dot"></div>
+        <div class="road-phase">Phase 2 · 취업 후 1~2개월</div>
+        <div class="road-title">리듬 잡기 + 인스타 시작</div>
+        <div class="road-tasks">
+          <span>생활 리듬 안정화</span>
+          <span>인스타그램 시작 — 주 2~3회 카드뉴스/릴스</span>
+          <span>부동산 공부 내용 = 카드뉴스 소재로 연결</span>
+        </div>
+      </div>
+      <div class="road-step">
+        <div class="road-dot"></div>
+        <div class="road-phase">Phase 3 · 인스타 루틴이 잡힌 후</div>
+        <div class="road-title">블로그 추가</div>
+        <div class="road-tasks">
+          <span>블로그 시작 — 인스타 카드뉴스의 확장판</span>
+          <span>주 1~2편 글쓰기</span>
+        </div>
+      </div>
+      <div class="road-step">
+        <div class="road-dot"></div>
+        <div class="road-phase">Phase 4 · 여유가 생겼을 때</div>
+        <div class="road-title">유튜브 시작</div>
+        <div class="road-tasks">
+          <span>라이프스타일 브이로그 시작</span>
+          <span>인스타·블로그에서 검증된 소재를 영상화</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. 현황 -->
+  <div class="section">
+    <div class="section-num">07</div>
+    <div class="section-title">동시 진행 과제 현황</div>
+    <table class="status-table">
+      <tr><th>과제</th><th>우선순위</th><th>상태</th></tr>
+      <tr><td>구직 활동</td><td><span class="status-dot s-red"></span>최우선</td><td>진행 중</td></tr>
+      <tr><td>숏폼 부업</td><td><span class="status-dot s-amber"></span>병행</td><td>시작 가능</td></tr>
+      <tr><td>부동산 경매 공부</td><td><span class="status-dot s-green"></span>일상 병행</td><td>콘텐츠 소재와 연결</td></tr>
+      <tr><td>인스타그램</td><td><span class="status-dot s-gray"></span>대기</td><td>취업 후 시작</td></tr>
+      <tr><td>블로그</td><td><span class="status-dot s-gray"></span>대기</td><td>인스타 안정 후</td></tr>
+      <tr><td>유튜브</td><td><span class="status-dot s-gray"></span>대기</td><td>가장 마지막</td></tr>
+      <tr><td>개인 글쓰기</td><td><span class="status-dot s-green"></span>일상 병행</td><td>블로그와 통합 가능</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    Summer's Life Plan · Last updated March 2026
+  </div>
+
+</div>
+</body>
+</html>
