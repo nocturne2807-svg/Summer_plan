@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)file:///Users/soya/Downloads/summers_2026_master_v10.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Summer's 2026 Master Plan</title>
+<link href="./Summer&#39;s 2026 Master Plan_files/css2" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0f;--s1:#111118;--s2:#18181f;--s3:#1e1e28;--b:rgba(255,255,255,.06);--bh:rgba(255,255,255,.12);--t:#e8e6e0;--td:#8a8880;--tf:#555550;--coral:#E8593C;--cs:rgba(232,89,60,.10);--blue:#4A9EE8;--bs:rgba(74,158,232,.10);--amber:#EFA527;--as:rgba(239,165,39,.10);--purple:#9B8AEF;--ps:rgba(155,138,239,.10);--green:#3DBB8A;--gs:rgba(61,187,138,.10);--pink:#E06B96;--pks:rgba(224,107,150,.10)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t);font-family:'Noto Sans KR',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.dragging{user-select:none;-webkit-user-select:none;cursor:grabbing!important}
+.mono{font-family:'Space Mono',monospace}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--s1)}::-webkit-scrollbar-thumb{background:var(--tf);border-radius:3px}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--b);padding:10px 20px;display:flex;align-items:center;gap:8px}
+.nav-title{font-weight:900;font-size:15px;margin-right:auto}.nav-title em{font-style:italic;font-weight:300;color:var(--coral)}
+.tab{color:var(--td);padding:6px 12px;border-radius:8px;font-size:12px;cursor:pointer;transition:all .2s;border:none;background:none;font-family:inherit}.tab:hover{color:var(--t);background:var(--s2)}.tab.active{color:var(--coral);background:var(--cs)}
+.save-ind{font-size:10px;color:var(--green);opacity:0;transition:opacity .3s}.save-ind.show{opacity:1}
+
+.page{display:none;padding:70px 20px 60px;max-width:1400px;margin:0 auto}.page.active{display:block}
+.hero{text-align:center;padding:40px 0 24px}
+.hero-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--coral)}
+.hero h1{font-size:36px;font-weight:900;letter-spacing:-2px;margin:8px 0}.hero h1 em{font-style:italic;font-weight:300;color:var(--coral)}
+.hero .sub{font-size:13px;color:var(--td);font-weight:300}
+
+.tools{display:flex;gap:6px;margin:16px 0;flex-wrap:wrap;align-items:center}
+.tools button{background:var(--s2);border:1px solid var(--b);color:var(--td);padding:5px 10px;border-radius:8px;font-size:11px;cursor:pointer;font-family:inherit;transition:all .2s}.tools button:hover{color:var(--t);border-color:var(--bh)}.tools button:disabled{opacity:.3;cursor:default;pointer-events:none}.tools .danger:hover{color:var(--coral);border-color:var(--coral)}
+.sbox{background:var(--s2);border:1px solid var(--b);border-radius:8px;padding:5px 10px;color:var(--t);font-size:12px;font-family:inherit;outline:none;width:160px}.sbox:focus{border-color:var(--coral)}
+
+.mg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+@media(max-width:1100px){.mg{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.mg{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.mg{grid-template-columns:1fr}}
+
+.mc{background:var(--s1);border:1px solid var(--b);border-radius:14px;padding:14px;min-height:100px;transition:border-color .2s}.mc:hover{border-color:var(--bh)}
+.mc.drop-target{border-color:var(--green)!important;box-shadow:0 0 12px rgba(61,187,138,.2)}
+.mh{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--b)}
+.mn{font-size:14px;font-weight:700}.mn small{color:var(--tf);font-weight:300;font-size:12px;margin-left:4px}
+.mc-ct{font-size:10px;color:var(--tf);background:var(--s2);padding:2px 8px;border-radius:10px}
+
+.grp{margin-bottom:6px;border:1px solid var(--b);border-radius:10px;overflow:hidden;background:var(--s2);transition:border-color .15s}
+.grp.drop-target{border-color:var(--green)!important}
+.gh{display:flex;align-items:center;gap:6px;padding:7px 10px;font-size:13px;font-weight:500;transition:background .2s;user-select:none}.gh:hover{background:var(--s3)}
+.gh-drag{cursor:grab;color:var(--tf);font-size:14px;line-height:1;padding:2px;border-radius:4px;transition:color .15s;touch-action:none}.gh-drag:hover{color:var(--t)}
+.ga{font-size:10px;color:var(--tf);transition:transform .2s;cursor:pointer}.ga.open{transform:rotate(90deg)}
+.gn{flex:1;min-width:0;cursor:pointer}
+.gc{font-size:10px;color:var(--tf)}
+.gd{opacity:0;background:none;border:none;color:var(--tf);cursor:pointer;font-size:11px;padding:0 4px;transition:opacity .2s}.gh:hover .gd{opacity:1}.gd:hover{color:var(--coral)}
+.gb{padding:2px 6px 6px;min-height:4px}.gb.closed{display:none}
+
+.ti{display:flex;align-items:flex-start;gap:5px;padding:5px 8px;border-radius:6px;font-size:12px;font-weight:300;transition:background .1s;position:relative;touch-action:auto}
+.ti:hover{background:rgba(255,255,255,.04)}
+.ti.drag-source{opacity:.2}
+.ti input[type=checkbox]{margin-top:3px;accent-color:var(--coral);cursor:pointer;flex-shrink:0}
+.ti .tt{flex:1;min-width:0;word-break:break-word}.ti .tt.done{text-decoration:line-through;color:var(--tf)}
+.ti .btns{display:flex;gap:1px;opacity:0;transition:opacity .15s;flex-shrink:0}.ti:hover .btns{opacity:1}
+.ib{background:none;border:none;color:var(--tf);cursor:pointer;font-size:10px;padding:1px 3px;border-radius:3px}.ib:hover{color:var(--t);background:var(--s3)}.ib.del:hover{color:var(--coral)}
+.tt-edit{background:var(--s1);border:1px solid var(--coral);border-radius:4px;padding:1px 6px;color:var(--t);font-size:12px;width:100%;font-family:inherit;outline:none}
+
+/* Drop indicator line */
+.drop-line{height:2px;background:var(--green);border-radius:1px;margin:1px 8px;pointer-events:none;animation:pulse .8s ease infinite}
+.drop-line-grp{height:3px;background:var(--coral);border-radius:1.5px;margin:3px 0;pointer-events:none;animation:pulse .8s ease infinite}
+.grp.drag-source{opacity:.2}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+
+/* Ghost element */
+.drag-ghost{position:fixed;z-index:999;pointer-events:none;background:var(--s3);border:1px solid var(--coral);border-radius:8px;padding:6px 12px;font-size:12px;color:var(--coral);max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 8px 24px rgba(0,0,0,.4);opacity:.92;transform:translate(-50%,-50%)}
+
+.add-row{display:flex;gap:4px;margin-top:8px;padding-top:6px;border-top:1px solid var(--b)}
+.add-row input{flex:1;background:var(--s2);border:1px solid var(--b);border-radius:6px;padding:5px 8px;color:var(--t);font-size:11px;font-family:inherit;outline:none}.add-row input:focus{border-color:var(--coral)}.add-row input::placeholder{color:var(--tf)}
+.add-row button{background:var(--cs);border:none;color:var(--coral);border-radius:6px;padding:5px 8px;cursor:pointer;font-size:11px;font-weight:500;white-space:nowrap;font-family:inherit}.add-row button:hover{background:var(--coral);color:#fff}
+
+/* Routine + LP styles */
+.routine-chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 24px;justify-content:center}
+.r-chip{font-size:12px;font-weight:500;padding:6px 14px;border-radius:100px;display:flex;align-items:center;gap:6px}.r-chip .dot{width:6px;height:6px;border-radius:50%}
+.timeline{display:flex;flex-direction:column;gap:4px;position:relative;max-width:680px;margin:0 auto}
+.timeline::before{content:'';position:absolute;left:56px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--b) 3%,var(--b) 97%,transparent)}
+.t-block{display:flex;align-items:stretch;border-radius:12px;transition:transform .2s}.t-block:hover{transform:translateX(4px)}
+.t-time{min-width:112px;padding:14px 16px 14px 0;text-align:right;display:flex;flex-direction:column;justify-content:center;position:relative}
+.t-time::after{content:'';position:absolute;right:-4px;top:50%;transform:translateY(-50%);width:7px;height:7px;border-radius:50%;border:1.5px solid var(--tf);background:var(--bg);z-index:1}
+.t-block.accent .t-time::after{border-color:var(--ac);background:var(--ac);box-shadow:0 0 8px var(--ac)}
+.t-range{font-size:13px;font-weight:700}.t-dur{font-size:10px;color:var(--tf);margin-top:2px}
+.t-content{flex:1;padding:14px 18px;border-radius:12px;margin-left:16px;display:flex;align-items:center;overflow:hidden}
+.t-block.accent .t-content{border-left:3px solid var(--ac)}
+.t-title{font-size:15px;font-weight:500}.t-desc{font-size:12px;margin-top:3px;font-weight:300}
+.t-divider{height:1px;margin:6px 0 6px 128px;background:var(--b)}
+.rot-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;max-width:680px;margin:16px auto}
+.rot-cell{padding:14px 8px;border-radius:12px;text-align:center;border:1px solid var(--b)}.rot-day{font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:6px}.rot-item{font-size:13px}
+.rule{display:flex;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--b);max-width:680px;margin:0 auto}.rule:last-child{border-bottom:none}
+.rule-num{font-size:20px;font-weight:700;min-width:28px}.rule-text{font-size:14px;color:var(--td);font-weight:300}.rule-text strong{color:var(--t);font-weight:500}
+.section-title{font-size:20px;font-weight:700;margin:40px 0 16px}
+.lp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}@media(max-width:768px){.lp-grid{grid-template-columns:1fr}}
+.lp-card{background:var(--s1);border:1px solid var(--b);border-radius:14px;padding:20px}.lp-card-title{font-size:15px;font-weight:700;margin-bottom:4px}.lp-card-sub{font-size:12px;color:var(--td);font-weight:300}
+.lp-card-tag{font-size:10px;padding:3px 8px;border-radius:20px;font-weight:500;display:inline-block;margin-top:8px}
+.phase{display:flex;gap:16px;margin-bottom:10px;padding:16px;border-radius:12px;background:var(--s1);border:1px solid var(--b)}
+.phase-num{font-size:11px;font-weight:700;letter-spacing:2px;min-width:70px}.phase-title{font-size:14px;font-weight:700;margin-bottom:2px}.phase-sub{font-size:12px;color:var(--td);font-weight:300}
+</style>
+</head>
+<body class="">
+<nav class="nav">
+  <span class="nav-title mono">Summer's <em>2026</em></span>
+  <button class="tab active mono" onclick="showPage(&#39;monthly&#39;,this)">Monthly</button>
+  <button class="tab mono" onclick="showPage(&#39;routine&#39;,this)">Routine</button>
+  <button class="tab mono" onclick="showPage(&#39;lifeplan&#39;,this)">Life Plan</button>
+  <span class="save-ind mono" id="saveInd">✓ saved</span>
+</nav>
+
+<div class="page active" id="page-monthly">
+  <div class="hero"><div class="hero-label mono">2026 Master Plan</div><h1>Monthly <em>Planner</em></h1><div class="sub">슬라이드해서 즉시 드래그 · ⠿ 꾹 눌러 그룹 이동 · 더블클릭 수정 · 자동저장</div></div>
+  <div class="tools">
+    <button onclick="undo()" title="Ctrl+Z" id="undoBtn">↩ 되돌리기</button>
+    <button onclick="redo()" title="Ctrl+Y" id="redoBtn" disabled="">↪ 다시하기</button>
+    <input class="sbox" placeholder="🔍 검색..." oninput="filterTasks(this.value)">
+    <button onclick="setAllGrp(true)">펼치기</button>
+    <button onclick="setAllGrp(false)">접기</button>
+    <button onclick="exportData()">💾</button>
+    <button onclick="document.getElementById(&#39;impF&#39;).click()">📂</button>
+    <input type="file" id="impF" accept=".json" style="display:none" onchange="importData(event)">
+    <button class="danger" onclick="if(confirm(&#39;초기화?&#39;)){localStorage.removeItem(&#39;s2026v6&#39;);location.reload()}">🗑</button>
+  </div>
+  <div class="mg" id="monthGrid"><div class="mc" data-month="0"><div class="mh"><span class="mn">January<small>1월</small></span><span class="mc-ct" id="ct-0">0/4</span></div><div class="grp" data-m="0" data-g="0"><div class="gh">
+          <span class="gh-drag" data-m="0" data-g="0" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(0,0,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(0,0,this.parentElement)" ondblclick="event.stopPropagation();editGrp(0,0,this)">여수</span>
+          <span class="gc">1</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(0,0)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="0" data-g="0" data-i="0">
+          <input type="checkbox" onchange="tog(0,0,0,this)">
+          <span class="tt " ondblclick="editItem(0,0,0,this)">옹천생딸기모찌</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(0,0,0)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="0" data-g="1"><div class="gh">
+          <span class="gh-drag" data-m="0" data-g="1" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(0,1,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(0,1,this.parentElement)" ondblclick="event.stopPropagation();editGrp(0,1,this)">💰 돈</span>
+          <span class="gc">3</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(0,1)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="0" data-g="1" data-i="0">
+          <input type="checkbox" onchange="tog(0,1,0,this)">
+          <span class="tt " ondblclick="editItem(0,1,0,this)">결혼자금 100</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(0,1,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="0" data-g="1" data-i="1">
+          <input type="checkbox" onchange="tog(0,1,1,this)">
+          <span class="tt " ondblclick="editItem(0,1,1,this)">굴비적금 30</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(0,1,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="0" data-g="1" data-i="2">
+          <input type="checkbox" onchange="tog(0,1,2,this)">
+          <span class="tt " ondblclick="editItem(0,1,2,this)">S&amp;P100 10</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(0,1,2)">✕</button>
+          </span>
+        </div></div></div><div class="add-row"><input placeholder="할 일..." id="inp-0" onkeydown="if(event.key===&#39;Enter&#39;)addItem(0)"><button onclick="addItem(0)">+할일</button><button onclick="addGrp(0)">+그룹</button></div></div><div class="mc" data-month="1"><div class="mh"><span class="mn">February<small>2월</small></span><span class="mc-ct" id="ct-1">0/21</span></div><div class="grp" data-m="1" data-g="0"><div class="gh">
+          <span class="gh-drag" data-m="1" data-g="0" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(1,0,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(1,0,this.parentElement)" ondblclick="event.stopPropagation();editGrp(1,0,this)">🏥 건강/미용</span>
+          <span class="gc">3</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(1,0)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="1" data-g="0" data-i="0">
+          <input type="checkbox" onchange="tog(1,0,0,this)">
+          <span class="tt " ondblclick="editItem(1,0,0,this)">[병원] 급체</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,0,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="1" data-g="0" data-i="1">
+          <input type="checkbox" onchange="tog(1,0,1,this)">
+          <span class="tt " ondblclick="editItem(1,0,1,this)">49kg</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,0,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="1" data-g="0" data-i="2">
+          <input type="checkbox" onchange="tog(1,0,2,this)">
+          <span class="tt " ondblclick="editItem(1,0,2,this)">온뷰티 -보톡스,미백</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,0,2)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="1" data-g="1"><div class="gh">
+          <span class="gh-drag" data-m="1" data-g="1" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(1,1,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(1,1,this.parentElement)" ondblclick="event.stopPropagation();editGrp(1,1,this)">💰 돈 벌고</span>
+          <span class="gc">2</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(1,1)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="1" data-g="1" data-i="0">
+          <input type="checkbox" onchange="tog(1,1,0,this)">
+          <span class="tt " ondblclick="editItem(1,1,0,this)">[240] 적조 220/우물우물 20</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,1,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="1" data-g="1" data-i="1">
+          <input type="checkbox" onchange="tog(1,1,1,this)">
+          <span class="tt " ondblclick="editItem(1,1,1,this)">리뷰노트</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,1,1)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="1" data-g="2"><div class="gh">
+          <span class="gh-drag" data-m="1" data-g="2" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(1,2,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(1,2,this.parentElement)" ondblclick="event.stopPropagation();editGrp(1,2,this)">💰 돈 모으기</span>
+          <span class="gc">5</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(1,2)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="1" data-g="2" data-i="0">
+          <input type="checkbox" onchange="tog(1,2,0,this)">
+          <span class="tt " ondblclick="editItem(1,2,0,this)">S&amp;P/ETF/엔비디아 3주</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,2,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="1" data-g="2" data-i="1">
+          <input type="checkbox" onchange="tog(1,2,1,this)">
+          <span class="tt " ondblclick="editItem(1,2,1,this)">ISA계좌</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,2,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="1" data-g="2" data-i="2">
+          <input type="checkbox" onchange="tog(1,2,2,this)">
+          <span class="tt " ondblclick="editItem(1,2,2,this)">CMA -2000</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,2,2)">✕</button>
+          </span>
+        </div><div class="ti" data-m="1" data-g="2" data-i="3">
+          <input type="checkbox" onchange="tog(1,2,3,this)">
+          <span class="tt " ondblclick="editItem(1,2,3,this)">굴비적금 30</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,2,3)">✕</button>
+          </span>
+        </div><div class="ti" data-m="1" data-g="2" data-i="4">
+          <input type="checkbox" onchange="tog(1,2,4,this)">
+          <span class="tt " ondblclick="editItem(1,2,4,this)">결혼자금 100</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,2,4)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="1" data-g="3"><div class="gh">
+          <span class="gh-drag" data-m="1" data-g="3" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(1,3,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(1,3,this.parentElement)" ondblclick="event.stopPropagation();editGrp(1,3,this)">🎉 놀기</span>
+          <span class="gc">3</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(1,3)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="1" data-g="3" data-i="0">
+          <input type="checkbox" onchange="tog(1,3,0,this)">
+          <span class="tt " ondblclick="editItem(1,3,0,this)">고성 여행</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,3,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="1" data-g="3" data-i="1">
+          <input type="checkbox" onchange="tog(1,3,1,this)">
+          <span class="tt " ondblclick="editItem(1,3,1,this)">화랑대 스파</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,3,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="1" data-g="3" data-i="2">
+          <input type="checkbox" onchange="tog(1,3,2,this)">
+          <span class="tt " ondblclick="editItem(1,3,2,this)">과메기 파티</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,3,2)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="1" data-g="4"><div class="gh">
+          <span class="gh-drag" data-m="1" data-g="4" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(1,4,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(1,4,this.parentElement)" ondblclick="event.stopPropagation();editGrp(1,4,this)">📥 INPUT</span>
+          <span class="gc">2</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(1,4)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="1" data-g="4" data-i="0">
+          <input type="checkbox" onchange="tog(1,4,0,this)">
+          <span class="tt " ondblclick="editItem(1,4,0,this)">[영화] 씨너스,탑,3-2</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,4,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="1" data-g="4" data-i="1">
+          <input type="checkbox" onchange="tog(1,4,1,this)">
+          <span class="tt " ondblclick="editItem(1,4,1,this)">[책] 영원에 빛을져서</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,4,1)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="1" data-g="5"><div class="gh">
+          <span class="gh-drag" data-m="1" data-g="5" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(1,5,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(1,5,this.parentElement)" ondblclick="event.stopPropagation();editGrp(1,5,this)">💼 일</span>
+          <span class="gc">2</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(1,5)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="1" data-g="5" data-i="0">
+          <input type="checkbox" onchange="tog(1,5,0,this)">
+          <span class="tt " ondblclick="editItem(1,5,0,this)">숏폼 기획안</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,5,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="1" data-g="5" data-i="1">
+          <input type="checkbox" onchange="tog(1,5,1,this)">
+          <span class="tt " ondblclick="editItem(1,5,1,this)">동그람이 편집</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,5,1)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="1" data-g="6"><div class="gh">
+          <span class="gh-drag" data-m="1" data-g="6" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(1,6,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(1,6,this.parentElement)" ondblclick="event.stopPropagation();editGrp(1,6,this)">🍳 요리</span>
+          <span class="gc">2</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(1,6)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="1" data-g="6" data-i="0">
+          <input type="checkbox" onchange="tog(1,6,0,this)">
+          <span class="tt " ondblclick="editItem(1,6,0,this)">드라이카레</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,6,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="1" data-g="6" data-i="1">
+          <input type="checkbox" onchange="tog(1,6,1,this)">
+          <span class="tt " ondblclick="editItem(1,6,1,this)">봄동비빔밥</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,6,1)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="1" data-g="7"><div class="gh">
+          <span class="gh-drag" data-m="1" data-g="7" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(1,7,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(1,7,this.parentElement)" ondblclick="event.stopPropagation();editGrp(1,7,this)">🏠 부동산경매 — 준비</span>
+          <span class="gc">2</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(1,7)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="1" data-g="7" data-i="0">
+          <input type="checkbox" onchange="tog(1,7,0,this)">
+          <span class="tt " ondblclick="editItem(1,7,0,this)">유튜브 경매 입문 시청</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,7,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="1" data-g="7" data-i="1">
+          <input type="checkbox" onchange="tog(1,7,1,this)">
+          <span class="tt " ondblclick="editItem(1,7,1,this)">부자아빠 읽기</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(1,7,1)">✕</button>
+          </span>
+        </div></div></div><div class="add-row"><input placeholder="할 일..." id="inp-1" onkeydown="if(event.key===&#39;Enter&#39;)addItem(1)"><button onclick="addItem(1)">+할일</button><button onclick="addGrp(1)">+그룹</button></div></div><div class="mc" data-month="2"><div class="mh"><span class="mn">March<small>3월</small></span><span class="mc-ct" id="ct-2">0/25</span></div><div class="grp" data-m="2" data-g="0"><div class="gh">
+          <span class="gh-drag" data-m="2" data-g="0" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(2,0,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(2,0,this.parentElement)" ondblclick="event.stopPropagation();editGrp(2,0,this)">🏋️ 건강</span>
+          <span class="gc">3</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(2,0)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="2" data-g="0" data-i="0">
+          <input type="checkbox" onchange="tog(2,0,0,this)">
+          <span class="tt " ondblclick="editItem(2,0,0,this)">49→48KG</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,0,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="0" data-i="1">
+          <input type="checkbox" onchange="tog(2,0,1,this)">
+          <span class="tt " ondblclick="editItem(2,0,1,this)">러닝</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,0,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="0" data-i="2">
+          <input type="checkbox" onchange="tog(2,0,2,this)">
+          <span class="tt " ondblclick="editItem(2,0,2,this)">폴댄스 3번 (현재 1번)</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,0,2)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="2" data-g="1"><div class="gh">
+          <span class="gh-drag" data-m="2" data-g="1" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(2,1,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(2,1,this.parentElement)" ondblclick="event.stopPropagation();editGrp(2,1,this)">✍️ 창작</span>
+          <span class="gc">2</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(2,1)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="2" data-g="1" data-i="0">
+          <input type="checkbox" onchange="tog(2,1,0,this)">
+          <span class="tt " ondblclick="editItem(2,1,0,this)">시나리오 시놉시스</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,1,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="1" data-i="1">
+          <input type="checkbox" onchange="tog(2,1,1,this)">
+          <span class="tt " ondblclick="editItem(2,1,1,this)">아빠 소설</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,1,1)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="2" data-g="2"><div class="gh">
+          <span class="gh-drag" data-m="2" data-g="2" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(2,2,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(2,2,this.parentElement)" ondblclick="event.stopPropagation();editGrp(2,2,this)">💰 돈</span>
+          <span class="gc">6</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(2,2)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="2" data-g="2" data-i="0">
+          <input type="checkbox" onchange="tog(2,2,0,this)">
+          <span class="tt " ondblclick="editItem(2,2,0,this)">동그람이 편집 (330 목표)</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,2,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="2" data-i="1">
+          <input type="checkbox" onchange="tog(2,2,1,this)">
+          <span class="tt " ondblclick="editItem(2,2,1,this)">우물우물 숏폼 (20)</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,2,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="2" data-i="2">
+          <input type="checkbox" onchange="tog(2,2,2,this)">
+          <span class="tt " ondblclick="editItem(2,2,2,this)">보더리스 광고 (40)</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,2,2)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="2" data-i="3">
+          <input type="checkbox" onchange="tog(2,2,3,this)">
+          <span class="tt " ondblclick="editItem(2,2,3,this)">구직 250!</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,2,3)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="2" data-i="4">
+          <input type="checkbox" onchange="tog(2,2,4,this)">
+          <span class="tt " ondblclick="editItem(2,2,4,this)">고정비100/결혼100/생활60</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,2,4)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="2" data-i="5">
+          <input type="checkbox" onchange="tog(2,2,5,this)">
+          <span class="tt " ondblclick="editItem(2,2,5,this)">배당주, 공모주</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,2,5)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="2" data-g="3"><div class="gh">
+          <span class="gh-drag" data-m="2" data-g="3" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(2,3,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(2,3,this.parentElement)" ondblclick="event.stopPropagation();editGrp(2,3,this)">💼 부업</span>
+          <span class="gc">3</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(2,3)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="2" data-g="3" data-i="0">
+          <input type="checkbox" onchange="tog(2,3,0,this)">
+          <span class="tt " ondblclick="editItem(2,3,0,this)">쇼핑 숏폼 (21일 시작!)</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,3,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="3" data-i="1">
+          <input type="checkbox" onchange="tog(2,3,1,this)">
+          <span class="tt " ondblclick="editItem(2,3,1,this)">편집 프리랜서 (</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,3,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="3" data-i="2">
+          <input type="checkbox" onchange="tog(2,3,2,this)">
+          <span class="tt " ondblclick="editItem(2,3,2,this)">유튜브/인스타</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,3,2)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="2" data-g="4"><div class="gh">
+          <span class="gh-drag" data-m="2" data-g="4" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(2,4,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(2,4,this.parentElement)" ondblclick="event.stopPropagation();editGrp(2,4,this)">🎨 생활</span>
+          <span class="gc">3</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(2,4)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="2" data-g="4" data-i="0">
+          <input type="checkbox" onchange="tog(2,4,0,this)">
+          <span class="tt " ondblclick="editItem(2,4,0,this)">도자기 DB</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,4,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="4" data-i="1">
+          <input type="checkbox" onchange="tog(2,4,1,this)">
+          <span class="tt " ondblclick="editItem(2,4,1,this)">나스 복구!!</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,4,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="4" data-i="2">
+          <input type="checkbox" onchange="tog(2,4,2,this)">
+          <span class="tt " ondblclick="editItem(2,4,2,this)">바이올린 수리</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,4,2)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="2" data-g="5"><div class="gh">
+          <span class="gh-drag" data-m="2" data-g="5" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(2,5,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(2,5,this.parentElement)" ondblclick="event.stopPropagation();editGrp(2,5,this)">👥 사람</span>
+          <span class="gc">2</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(2,5)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="2" data-g="5" data-i="0">
+          <input type="checkbox" onchange="tog(2,5,0,this)">
+          <span class="tt " ondblclick="editItem(2,5,0,this)">보경</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,5,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="5" data-i="1">
+          <input type="checkbox" onchange="tog(2,5,1,this)">
+          <span class="tt " ondblclick="editItem(2,5,1,this)">윤주와 동은</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,5,1)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="2" data-g="6"><div class="gh">
+          <span class="gh-drag" data-m="2" data-g="6" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(2,6,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(2,6,this.parentElement)" ondblclick="event.stopPropagation();editGrp(2,6,this)">🏠 부동산경매 — 기초</span>
+          <span class="gc">6</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(2,6)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="2" data-g="6" data-i="0">
+          <input type="checkbox" onchange="tog(2,6,0,this)">
+          <span class="tt " ondblclick="editItem(2,6,0,this)">말소기준권리</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,6,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="6" data-i="1">
+          <input type="checkbox" onchange="tog(2,6,1,this)">
+          <span class="tt " ondblclick="editItem(2,6,1,this)">등기부등본 (갑구·을구)</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,6,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="6" data-i="2">
+          <input type="checkbox" onchange="tog(2,6,2,this)">
+          <span class="tt " ondblclick="editItem(2,6,2,this)">배당 순서</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,6,2)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="6" data-i="3">
+          <input type="checkbox" onchange="tog(2,6,3,this)">
+          <span class="tt " ondblclick="editItem(2,6,3,this)">경매 용어</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,6,3)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="6" data-i="4">
+          <input type="checkbox" onchange="tog(2,6,4,this)">
+          <span class="tt " ondblclick="editItem(2,6,4,this)">유튜브 강의</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,6,4)">✕</button>
+          </span>
+        </div><div class="ti" data-m="2" data-g="6" data-i="5">
+          <input type="checkbox" onchange="tog(2,6,5,this)">
+          <span class="tt " ondblclick="editItem(2,6,5,this)">입문서 선정</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(2,6,5)">✕</button>
+          </span>
+        </div></div></div><div class="add-row"><input placeholder="할 일..." id="inp-2" onkeydown="if(event.key===&#39;Enter&#39;)addItem(2)"><button onclick="addItem(2)">+할일</button><button onclick="addGrp(2)">+그룹</button></div></div><div class="mc" data-month="3"><div class="mh"><span class="mn">April<small>4월</small></span><span class="mc-ct" id="ct-3">0/22</span></div><div class="grp" data-m="3" data-g="0"><div class="gh">
+          <span class="gh-drag" data-m="3" data-g="0" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(3,0,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(3,0,this.parentElement)" ondblclick="event.stopPropagation();editGrp(3,0,this)">🏋️ 건강</span>
+          <span class="gc">3</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(3,0)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="3" data-g="0" data-i="0">
+          <input type="checkbox" onchange="tog(3,0,0,this)">
+          <span class="tt " ondblclick="editItem(3,0,0,this)">48→47KG</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,0,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="3" data-g="0" data-i="1">
+          <input type="checkbox" onchange="tog(3,0,1,this)">
+          <span class="tt " ondblclick="editItem(3,0,1,this)">건강검진</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,0,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="3" data-g="0" data-i="2">
+          <input type="checkbox" onchange="tog(3,0,2,this)">
+          <span class="tt " ondblclick="editItem(3,0,2,this)">마라톤 하프</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,0,2)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="3" data-g="1"><div class="gh">
+          <span class="gh-drag" data-m="3" data-g="1" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(3,1,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(3,1,this.parentElement)" ondblclick="event.stopPropagation();editGrp(3,1,this)">✍️ 창작</span>
+          <span class="gc">3</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(3,1)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="3" data-g="1" data-i="0">
+          <input type="checkbox" onchange="tog(3,1,0,this)">
+          <span class="tt " ondblclick="editItem(3,1,0,this)">트리트먼트 20장</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,1,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="3" data-g="1" data-i="1">
+          <input type="checkbox" onchange="tog(3,1,1,this)">
+          <span class="tt " ondblclick="editItem(3,1,1,this)">에세이</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,1,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="3" data-g="1" data-i="2">
+          <input type="checkbox" onchange="tog(3,1,2,this)">
+          <span class="tt " ondblclick="editItem(3,1,2,this)">프로크리에이트</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,1,2)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="3" data-g="2"><div class="gh">
+          <span class="gh-drag" data-m="3" data-g="2" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(3,2,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(3,2,this.parentElement)" ondblclick="event.stopPropagation();editGrp(3,2,this)">💰 돈</span>
+          <span class="gc">5</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(3,2)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="3" data-g="2" data-i="0">
+          <input type="checkbox" onchange="tog(3,2,0,this)">
+          <span class="tt " ondblclick="editItem(3,2,0,this)">동그람이 CMA→ISA</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,2,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="3" data-g="2" data-i="1">
+          <input type="checkbox" onchange="tog(3,2,1,this)">
+          <span class="tt " ondblclick="editItem(3,2,1,this)">고정급여-250</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,2,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="3" data-g="2" data-i="2">
+          <input type="checkbox" onchange="tog(3,2,2,this)">
+          <span class="tt " ondblclick="editItem(3,2,2,this)">부업-30</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,2,2)">✕</button>
+          </span>
+        </div><div class="ti" data-m="3" data-g="2" data-i="3">
+          <input type="checkbox" onchange="tog(3,2,3,this)">
+          <span class="tt " ondblclick="editItem(3,2,3,this)">ISA 서민형</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,2,3)">✕</button>
+          </span>
+        </div><div class="ti" data-m="3" data-g="2" data-i="4">
+          <input type="checkbox" onchange="tog(3,2,4,this)">
+          <span class="tt " ondblclick="editItem(3,2,4,this)">LH, 행복주택</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,2,4)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="3" data-g="3"><div class="gh">
+          <span class="gh-drag" data-m="3" data-g="3" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(3,3,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(3,3,this.parentElement)" ondblclick="event.stopPropagation();editGrp(3,3,this)">💼 부업</span>
+          <span class="gc">2</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(3,3)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="3" data-g="3" data-i="0">
+          <input type="checkbox" onchange="tog(3,3,0,this)">
+          <span class="tt " ondblclick="editItem(3,3,0,this)">블로그</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,3,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="3" data-g="3" data-i="1">
+          <input type="checkbox" onchange="tog(3,3,1,this)">
+          <span class="tt " ondblclick="editItem(3,3,1,this)">도자기 인스타</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,3,1)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="3" data-g="4"><div class="gh">
+          <span class="gh-drag" data-m="3" data-g="4" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(3,4,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(3,4,this.parentElement)" ondblclick="event.stopPropagation();editGrp(3,4,this)">👥 사람</span>
+          <span class="gc">3</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(3,4)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="3" data-g="4" data-i="0">
+          <input type="checkbox" onchange="tog(3,4,0,this)">
+          <span class="tt " ondblclick="editItem(3,4,0,this)">얼</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,4,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="3" data-g="4" data-i="1">
+          <input type="checkbox" onchange="tog(3,4,1,this)">
+          <span class="tt " ondblclick="editItem(3,4,1,this)">고모 청주</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,4,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="3" data-g="4" data-i="2">
+          <input type="checkbox" onchange="tog(3,4,2,this)">
+          <span class="tt " ondblclick="editItem(3,4,2,this)">현지 생일</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,4,2)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="3" data-g="5"><div class="gh">
+          <span class="gh-drag" data-m="3" data-g="5" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(3,5,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(3,5,this.parentElement)" ondblclick="event.stopPropagation();editGrp(3,5,this)">🏠 부동산경매 — 임차인</span>
+          <span class="gc">6</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(3,5)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="3" data-g="5" data-i="0">
+          <input type="checkbox" onchange="tog(3,5,0,this)">
+          <span class="tt " ondblclick="editItem(3,5,0,this)">대항력 판별법</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,5,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="3" data-g="5" data-i="1">
+          <input type="checkbox" onchange="tog(3,5,1,this)">
+          <span class="tt " ondblclick="editItem(3,5,1,this)">확정일자 vs 전입신고</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,5,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="3" data-g="5" data-i="2">
+          <input type="checkbox" onchange="tog(3,5,2,this)">
+          <span class="tt " ondblclick="editItem(3,5,2,this)">소액임차인</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,5,2)">✕</button>
+          </span>
+        </div><div class="ti" data-m="3" data-g="5" data-i="3">
+          <input type="checkbox" onchange="tog(3,5,3,this)">
+          <span class="tt " ondblclick="editItem(3,5,3,this)">인수 vs 소멸</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,5,3)">✕</button>
+          </span>
+        </div><div class="ti" data-m="3" data-g="5" data-i="4">
+          <input type="checkbox" onchange="tog(3,5,4,this)">
+          <span class="tt " ondblclick="editItem(3,5,4,this)">입문서 정독</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,5,4)">✕</button>
+          </span>
+        </div><div class="ti" data-m="3" data-g="5" data-i="5">
+          <input type="checkbox" onchange="tog(3,5,5,this)">
+          <span class="tt " ondblclick="editItem(3,5,5,this)">법원경매정보</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(3,5,5)">✕</button>
+          </span>
+        </div></div></div><div class="add-row"><input placeholder="할 일..." id="inp-3" onkeydown="if(event.key===&#39;Enter&#39;)addItem(3)"><button onclick="addItem(3)">+할일</button><button onclick="addGrp(3)">+그룹</button></div></div><div class="mc" data-month="4"><div class="mh"><span class="mn">May<small>5월</small></span><span class="mc-ct" id="ct-4">0/15</span></div><div class="grp" data-m="4" data-g="0"><div class="gh">
+          <span class="gh-drag" data-m="4" data-g="0" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(4,0,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(4,0,this.parentElement)" ondblclick="event.stopPropagation();editGrp(4,0,this)">🏋️ 건강</span>
+          <span class="gc">3</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(4,0)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="4" data-g="0" data-i="0">
+          <input type="checkbox" onchange="tog(4,0,0,this)">
+          <span class="tt " ondblclick="editItem(4,0,0,this)">46KG</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(4,0,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="4" data-g="0" data-i="1">
+          <input type="checkbox" onchange="tog(4,0,1,this)">
+          <span class="tt " ondblclick="editItem(4,0,1,this)">유방검사</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(4,0,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="4" data-g="0" data-i="2">
+          <input type="checkbox" onchange="tog(4,0,2,this)">
+          <span class="tt " ondblclick="editItem(4,0,2,this)">치과</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(4,0,2)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="4" data-g="1"><div class="gh">
+          <span class="gh-drag" data-m="4" data-g="1" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(4,1,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(4,1,this.parentElement)" ondblclick="event.stopPropagation();editGrp(4,1,this)">✍️ 창작</span>
+          <span class="gc">1</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(4,1)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="4" data-g="1" data-i="0">
+          <input type="checkbox" onchange="tog(4,1,0,this)">
+          <span class="tt " ondblclick="editItem(4,1,0,this)">단편 시나리오!</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(4,1,0)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="4" data-g="2"><div class="gh">
+          <span class="gh-drag" data-m="4" data-g="2" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(4,2,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(4,2,this.parentElement)" ondblclick="event.stopPropagation();editGrp(4,2,this)">💰 돈</span>
+          <span class="gc">3</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(4,2)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="4" data-g="2" data-i="0">
+          <input type="checkbox" onchange="tog(4,2,0,this)">
+          <span class="tt " ondblclick="editItem(4,2,0,this)">동그람이 5.10</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(4,2,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="4" data-g="2" data-i="1">
+          <input type="checkbox" onchange="tog(4,2,1,this)">
+          <span class="tt " ondblclick="editItem(4,2,1,this)">고정급여-250</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(4,2,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="4" data-g="2" data-i="2">
+          <input type="checkbox" onchange="tog(4,2,2,this)">
+          <span class="tt " ondblclick="editItem(4,2,2,this)">부업-30</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(4,2,2)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="4" data-g="3"><div class="gh">
+          <span class="gh-drag" data-m="4" data-g="3" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(4,3,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(4,3,this.parentElement)" ondblclick="event.stopPropagation();editGrp(4,3,this)">🎉 체험</span>
+          <span class="gc">3</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(4,3)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="4" data-g="3" data-i="0">
+          <input type="checkbox" onchange="tog(4,3,0,this)">
+          <span class="tt " ondblclick="editItem(4,3,0,this)">발사믹 원데이</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(4,3,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="4" data-g="3" data-i="1">
+          <input type="checkbox" onchange="tog(4,3,1,this)">
+          <span class="tt " ondblclick="editItem(4,3,1,this)">캠핑</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(4,3,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="4" data-g="3" data-i="2">
+          <input type="checkbox" onchange="tog(4,3,2,this)">
+          <span class="tt " ondblclick="editItem(4,3,2,this)">경매 도전</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(4,3,2)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="4" data-g="4"><div class="gh">
+          <span class="gh-drag" data-m="4" data-g="4" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(4,4,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(4,4,this.parentElement)" ondblclick="event.stopPropagation();editGrp(4,4,this)">🏠 부동산경매 — 고급 권리</span>
+          <span class="gc">5</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(4,4)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="4" data-g="4" data-i="0">
+          <input type="checkbox" onchange="tog(4,4,0,this)">
+          <span class="tt " ondblclick="editItem(4,4,0,this)">유치권</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(4,4,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="4" data-g="4" data-i="1">
+          <input type="checkbox" onchange="tog(4,4,1,this)">
+          <span class="tt " ondblclick="editItem(4,4,1,this)">법정지상권</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(4,4,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="4" data-g="4" data-i="2">
+          <input type="checkbox" onchange="tog(4,4,2,this)">
+          <span class="tt " ondblclick="editItem(4,4,2,this)">가처분·가등기</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(4,4,2)">✕</button>
+          </span>
+        </div><div class="ti" data-m="4" data-g="4" data-i="3">
+          <input type="checkbox" onchange="tog(4,4,3,this)">
+          <span class="tt " ondblclick="editItem(4,4,3,this)">사례 분석 3건</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(4,4,3)">✕</button>
+          </span>
+        </div><div class="ti" data-m="4" data-g="4" data-i="4">
+          <input type="checkbox" onchange="tog(4,4,4,this)">
+          <span class="tt " ondblclick="editItem(4,4,4,this)">모의 입찰 1~2건</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(4,4,4)">✕</button>
+          </span>
+        </div></div></div><div class="add-row"><input placeholder="할 일..." id="inp-4" onkeydown="if(event.key===&#39;Enter&#39;)addItem(4)"><button onclick="addItem(4)">+할일</button><button onclick="addGrp(4)">+그룹</button></div></div><div class="mc" data-month="5"><div class="mh"><span class="mn">June<small>6월</small></span><span class="mc-ct" id="ct-5">0/11</span></div><div class="grp" data-m="5" data-g="0"><div class="gh">
+          <span class="gh-drag" data-m="5" data-g="0" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(5,0,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(5,0,this.parentElement)" ondblclick="event.stopPropagation();editGrp(5,0,this)">🏥 건강</span>
+          <span class="gc">1</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(5,0)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="5" data-g="0" data-i="0">
+          <input type="checkbox" onchange="tog(5,0,0,this)">
+          <span class="tt " ondblclick="editItem(5,0,0,this)">제이디스 검진</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(5,0,0)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="5" data-g="1"><div class="gh">
+          <span class="gh-drag" data-m="5" data-g="1" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(5,1,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(5,1,this.parentElement)" ondblclick="event.stopPropagation();editGrp(5,1,this)">💰 돈</span>
+          <span class="gc">2</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(5,1)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="5" data-g="1" data-i="0">
+          <input type="checkbox" onchange="tog(5,1,0,this)">
+          <span class="tt " ondblclick="editItem(5,1,0,this)">청년도약 (월50)</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(5,1,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="5" data-g="1" data-i="1">
+          <input type="checkbox" onchange="tog(5,1,1,this)">
+          <span class="tt " ondblclick="editItem(5,1,1,this)">수퍼ISA (300)</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(5,1,1)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="5" data-g="2"><div class="gh">
+          <span class="gh-drag" data-m="5" data-g="2" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(5,2,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(5,2,this.parentElement)" ondblclick="event.stopPropagation();editGrp(5,2,this)">🎨 생활</span>
+          <span class="gc">3</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(5,2)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="5" data-g="2" data-i="0">
+          <input type="checkbox" onchange="tog(5,2,0,this)">
+          <span class="tt " ondblclick="editItem(5,2,0,this)">테라스 꾸미기!!</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(5,2,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="5" data-g="2" data-i="1">
+          <input type="checkbox" onchange="tog(5,2,1,this)">
+          <span class="tt " ondblclick="editItem(5,2,1,this)">바질 키우기</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(5,2,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="5" data-g="2" data-i="2">
+          <input type="checkbox" onchange="tog(5,2,2,this)">
+          <span class="tt " ondblclick="editItem(5,2,2,this)">계곡 식당!!</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(5,2,2)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="5" data-g="3"><div class="gh">
+          <span class="gh-drag" data-m="5" data-g="3" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(5,3,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(5,3,this.parentElement)" ondblclick="event.stopPropagation();editGrp(5,3,this)">🏠 부동산경매 — 모의 실전</span>
+          <span class="gc">5</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(5,3)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="5" data-g="3" data-i="0">
+          <input type="checkbox" onchange="tog(5,3,0,this)">
+          <span class="tt " ondblclick="editItem(5,3,0,this)">물건 3~5건 선정</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(5,3,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="5" data-g="3" data-i="1">
+          <input type="checkbox" onchange="tog(5,3,1,this)">
+          <span class="tt " ondblclick="editItem(5,3,1,this)">등기부 권리분석</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(5,3,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="5" data-g="3" data-i="2">
+          <input type="checkbox" onchange="tog(5,3,2,this)">
+          <span class="tt " ondblclick="editItem(5,3,2,this)">입찰가 산정</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(5,3,2)">✕</button>
+          </span>
+        </div><div class="ti" data-m="5" data-g="3" data-i="3">
+          <input type="checkbox" onchange="tog(5,3,3,this)">
+          <span class="tt " ondblclick="editItem(5,3,3,this)">낙찰 추적</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(5,3,3)">✕</button>
+          </span>
+        </div><div class="ti" data-m="5" data-g="3" data-i="4">
+          <input type="checkbox" onchange="tog(5,3,4,this)">
+          <span class="tt " ondblclick="editItem(5,3,4,this)">스터디 참여</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(5,3,4)">✕</button>
+          </span>
+        </div></div></div><div class="add-row"><input placeholder="할 일..." id="inp-5" onkeydown="if(event.key===&#39;Enter&#39;)addItem(5)"><button onclick="addItem(5)">+할일</button><button onclick="addGrp(5)">+그룹</button></div></div><div class="mc" data-month="6"><div class="mh"><span class="mn">July<small>7월</small></span><span class="mc-ct" id="ct-6">0/7</span></div><div class="grp" data-m="6" data-g="0"><div class="gh">
+          <span class="gh-drag" data-m="6" data-g="0" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(6,0,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(6,0,this.parentElement)" ondblclick="event.stopPropagation();editGrp(6,0,this)">✍️ 창작</span>
+          <span class="gc">2</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(6,0)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="6" data-g="0" data-i="0">
+          <input type="checkbox" onchange="tog(6,0,0,this)">
+          <span class="tt " ondblclick="editItem(6,0,0,this)">단편 촬영 2회차</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(6,0,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="6" data-g="0" data-i="1">
+          <input type="checkbox" onchange="tog(6,0,1,this)">
+          <span class="tt " ondblclick="editItem(6,0,1,this)">소설 공모</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(6,0,1)">✕</button>
+          </span>
+        </div></div></div><div class="grp" data-m="6" data-g="1"><div class="gh">
+          <span class="gh-drag" data-m="6" data-g="1" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(6,1,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(6,1,this.parentElement)" ondblclick="event.stopPropagation();editGrp(6,1,this)">🏠 부동산경매 — 실전 탐색</span>
+          <span class="gc">4</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(6,1)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="6" data-g="1" data-i="0">
+          <input type="checkbox" onchange="tog(6,1,0,this)">
+          <span class="tt " ondblclick="editItem(6,1,0,this)">소형물건 탐색</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(6,1,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="6" data-g="1" data-i="1">
+          <input type="checkbox" onchange="tog(6,1,1,this)">
+          <span class="tt " ondblclick="editItem(6,1,1,this)">답사 주1회</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(6,1,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="6" data-g="1" data-i="2">
+          <input type="checkbox" onchange="tog(6,1,2,this)">
+          <span class="tt " ondblclick="editItem(6,1,2,this)">대출 조건</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(6,1,2)">✕</button>
+          </span>
+        </div><div class="ti" data-m="6" data-g="1" data-i="3">
+          <input type="checkbox" onchange="tog(6,1,3,this)">
+          <span class="tt " ondblclick="editItem(6,1,3,this)">시세 비교</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(6,1,3)">✕</button>
+          </span>
+        </div></div></div><div class="ti" data-m="6" data-g="2" data-i="0">
+          <input type="checkbox" onchange="tog(6,2,0,this)">
+          <span class="tt " ondblclick="editItem(6,2,0,this)">보더리스 광고 (40)</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(6,2,0)">✕</button>
+          </span>
+        </div><div class="add-row"><input placeholder="할 일..." id="inp-6" onkeydown="if(event.key===&#39;Enter&#39;)addItem(6)"><button onclick="addItem(6)">+할일</button><button onclick="addGrp(6)">+그룹</button></div></div><div class="mc" data-month="7"><div class="mh"><span class="mn">August<small>8월</small></span><span class="mc-ct" id="ct-7">0/4</span></div><div class="grp" data-m="7" data-g="0"><div class="gh">
+          <span class="gh-drag" data-m="7" data-g="0" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(7,0,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(7,0,this.parentElement)" ondblclick="event.stopPropagation();editGrp(7,0,this)">🏠 부동산경매 — 물건 분석</span>
+          <span class="gc">4</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(7,0)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="7" data-g="0" data-i="0">
+          <input type="checkbox" onchange="tog(7,0,0,this)">
+          <span class="tt " ondblclick="editItem(7,0,0,this)">등기부 3건+</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(7,0,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="7" data-g="0" data-i="1">
+          <input type="checkbox" onchange="tog(7,0,1,this)">
+          <span class="tt " ondblclick="editItem(7,0,1,this)">임차인 조사</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(7,0,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="7" data-g="0" data-i="2">
+          <input type="checkbox" onchange="tog(7,0,2,this)">
+          <span class="tt " ondblclick="editItem(7,0,2,this)">답사+시세</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(7,0,2)">✕</button>
+          </span>
+        </div><div class="ti" data-m="7" data-g="0" data-i="3">
+          <input type="checkbox" onchange="tog(7,0,3,this)">
+          <span class="tt " ondblclick="editItem(7,0,3,this)">입찰가 시뮬</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(7,0,3)">✕</button>
+          </span>
+        </div></div></div><div class="add-row"><input placeholder="할 일..." id="inp-7" onkeydown="if(event.key===&#39;Enter&#39;)addItem(7)"><button onclick="addItem(7)">+할일</button><button onclick="addGrp(7)">+그룹</button></div></div><div class="mc" data-month="8"><div class="mh"><span class="mn">September<small>9월</small></span><span class="mc-ct" id="ct-8">0/4</span></div><div class="grp" data-m="8" data-g="0"><div class="gh">
+          <span class="gh-drag" data-m="8" data-g="0" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(8,0,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(8,0,this.parentElement)" ondblclick="event.stopPropagation();editGrp(8,0,this)">🏠 부동산경매 — 입찰 준비</span>
+          <span class="gc">4</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(8,0)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="8" data-g="0" data-i="0">
+          <input type="checkbox" onchange="tog(8,0,0,this)">
+          <span class="tt " ondblclick="editItem(8,0,0,this)">물건 최종선정</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(8,0,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="8" data-g="0" data-i="1">
+          <input type="checkbox" onchange="tog(8,0,1,this)">
+          <span class="tt " ondblclick="editItem(8,0,1,this)">자금계획</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(8,0,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="8" data-g="0" data-i="2">
+          <input type="checkbox" onchange="tog(8,0,2,this)">
+          <span class="tt " ondblclick="editItem(8,0,2,this)">서류준비</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(8,0,2)">✕</button>
+          </span>
+        </div><div class="ti" data-m="8" data-g="0" data-i="3">
+          <input type="checkbox" onchange="tog(8,0,3,this)">
+          <span class="tt " ondblclick="editItem(8,0,3,this)">권리분석 점검</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(8,0,3)">✕</button>
+          </span>
+        </div></div></div><div class="add-row"><input placeholder="할 일..." id="inp-8" onkeydown="if(event.key===&#39;Enter&#39;)addItem(8)"><button onclick="addItem(8)">+할일</button><button onclick="addGrp(8)">+그룹</button></div></div><div class="mc" data-month="9"><div class="mh"><span class="mn">October<small>10월</small></span><span class="mc-ct" id="ct-9">0/3</span></div><div class="grp" data-m="9" data-g="0"><div class="gh">
+          <span class="gh-drag" data-m="9" data-g="0" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(9,0,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(9,0,this.parentElement)" ondblclick="event.stopPropagation();editGrp(9,0,this)">🏠 부동산경매 — 첫 입찰!</span>
+          <span class="gc">3</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(9,0)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="9" data-g="0" data-i="0">
+          <input type="checkbox" onchange="tog(9,0,0,this)">
+          <span class="tt " ondblclick="editItem(9,0,0,this)">소액 1건 입찰!</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(9,0,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="9" data-g="0" data-i="1">
+          <input type="checkbox" onchange="tog(9,0,1,this)">
+          <span class="tt " ondblclick="editItem(9,0,1,this)">결과 복기</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(9,0,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="9" data-g="0" data-i="2">
+          <input type="checkbox" onchange="tog(9,0,2,this)">
+          <span class="tt " ondblclick="editItem(9,0,2,this)">재입찰 전략</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(9,0,2)">✕</button>
+          </span>
+        </div></div></div><div class="add-row"><input placeholder="할 일..." id="inp-9" onkeydown="if(event.key===&#39;Enter&#39;)addItem(9)"><button onclick="addItem(9)">+할일</button><button onclick="addGrp(9)">+그룹</button></div></div><div class="mc" data-month="10"><div class="mh"><span class="mn">November<small>11월</small></span><span class="mc-ct" id="ct-10">0/3</span></div><div class="grp" data-m="10" data-g="0"><div class="gh">
+          <span class="gh-drag" data-m="10" data-g="0" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(10,0,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(10,0,this.parentElement)" ondblclick="event.stopPropagation();editGrp(10,0,this)">🏠 부동산경매 — 낙찰 후</span>
+          <span class="gc">3</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(10,0)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="10" data-g="0" data-i="0">
+          <input type="checkbox" onchange="tog(10,0,0,this)">
+          <span class="tt " ondblclick="editItem(10,0,0,this)">대출 실행</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(10,0,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="10" data-g="0" data-i="1">
+          <input type="checkbox" onchange="tog(10,0,1,this)">
+          <span class="tt " ondblclick="editItem(10,0,1,this)">잔금+소유권이전</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(10,0,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="10" data-g="0" data-i="2">
+          <input type="checkbox" onchange="tog(10,0,2,this)">
+          <span class="tt " ondblclick="editItem(10,0,2,this)">명도 절차</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(10,0,2)">✕</button>
+          </span>
+        </div></div></div><div class="add-row"><input placeholder="할 일..." id="inp-10" onkeydown="if(event.key===&#39;Enter&#39;)addItem(10)"><button onclick="addItem(10)">+할일</button><button onclick="addGrp(10)">+그룹</button></div></div><div class="mc" data-month="11"><div class="mh"><span class="mn">December<small>12월</small></span><span class="mc-ct" id="ct-11">0/3</span></div><div class="grp" data-m="11" data-g="0"><div class="gh">
+          <span class="gh-drag" data-m="11" data-g="0" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga open" onclick="togGrp(11,0,this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(11,0,this.parentElement)" ondblclick="event.stopPropagation();editGrp(11,0,this)">🏠 부동산경매 — 마무리</span>
+          <span class="gc">3</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(11,0)">✕</button>
+        </div><div class="gb "><div class="ti" data-m="11" data-g="0" data-i="0">
+          <input type="checkbox" onchange="tog(11,0,0,this)">
+          <span class="tt " ondblclick="editItem(11,0,0,this)">임대/매도 결정</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(11,0,0)">✕</button>
+          </span>
+        </div><div class="ti" data-m="11" data-g="0" data-i="1">
+          <input type="checkbox" onchange="tog(11,0,1,this)">
+          <span class="tt " ondblclick="editItem(11,0,1,this)">전과정 복기</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(11,0,1)">✕</button>
+          </span>
+        </div><div class="ti" data-m="11" data-g="0" data-i="2">
+          <input type="checkbox" onchange="tog(11,0,2,this)">
+          <span class="tt " ondblclick="editItem(11,0,2,this)">2027 전략</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(11,0,2)">✕</button>
+          </span>
+        </div></div></div><div class="add-row"><input placeholder="할 일..." id="inp-11" onkeydown="if(event.key===&#39;Enter&#39;)addItem(11)"><button onclick="addItem(11)">+할일</button><button onclick="addGrp(11)">+그룹</button></div></div></div>
+</div>
+
+<div class="page" id="page-routine">
+  <div class="hero"><div class="hero-label mono">Daily Routine</div><h1>나의 하루 <em>루틴</em></h1><div class="sub">새벽 2시 취침 · 오전 9시 기상</div></div>
+  <div class="routine-chips">
+    <span class="r-chip" style="background:var(--cs);color:var(--coral)"><span class="dot" style="background:var(--coral)"></span>글쓰기 4.5h</span>
+    <span class="r-chip" style="background:var(--bs);color:var(--blue)"><span class="dot" style="background:var(--blue)"></span>편집 3h</span>
+    <span class="r-chip" style="background:var(--as);color:var(--amber)"><span class="dot" style="background:var(--amber)"></span>구직·숏폼 3h</span>
+    <span class="r-chip" style="background:var(--ps);color:var(--purple)"><span class="dot" style="background:var(--purple)"></span>도자기·책 1h</span>
+    <span class="r-chip" style="background:var(--gs);color:var(--green)"><span class="dot" style="background:var(--green)"></span>운동 40m</span>
+    <span class="r-chip" style="background:var(--pks);color:var(--pink)"><span class="dot" style="background:var(--pink)"></span>저녁·영화 2h</span>
+  </div>
+  <div class="timeline" id="tlC"><div class="t-block accent" style="--ac:var(--green)"><div class="t-time"><span class="t-range mono">9:00-9:40</span><span class="t-dur mono">40m</span></div><div class="t-content" style="background:var(--gs)"><div><div class="t-title" style="color:var(--green)">운동</div><div class="t-desc" style="color:var(--green);opacity:.7">매일 고정</div></div></div></div><div class="t-block " style="--ac:var(--td)"><div class="t-time"><span class="t-range mono">9:40-10:00</span><span class="t-dur mono">20m</span></div><div class="t-content" style="background:var(--s2)"><div><div class="t-title" style="color:var(--td)">씻기·정비</div></div></div></div><div class="t-block accent" style="--ac:var(--purple)"><div class="t-time"><span class="t-range mono">10:00-11:00</span><span class="t-dur mono">1h</span></div><div class="t-content" style="background:var(--ps)"><div><div class="t-title" style="color:var(--purple)">도자기/책</div><div class="t-desc" style="color:var(--purple);opacity:.7">로테이션</div></div></div></div><div class="t-divider"></div><div class="t-block accent" style="--ac:var(--coral)"><div class="t-time"><span class="t-range mono">11:00-13:00</span><span class="t-dur mono">2h</span></div><div class="t-content" style="background:var(--cs)"><div><div class="t-title" style="color:var(--coral)">글쓰기 1</div><div class="t-desc" style="color:var(--coral);opacity:.7">오전 집중</div></div></div></div><div class="t-block " style="--ac:var(--td)"><div class="t-time"><span class="t-range mono">13:00-13:30</span><span class="t-dur mono">30m</span></div><div class="t-content" style="background:var(--s2)"><div><div class="t-title" style="color:var(--td)">휴식</div></div></div></div><div class="t-block accent" style="--ac:var(--coral)"><div class="t-time"><span class="t-range mono">13:30-16:00</span><span class="t-dur mono">2.5h</span></div><div class="t-content" style="background:var(--cs)"><div><div class="t-title" style="color:var(--coral)">글쓰기 2</div></div></div></div><div class="t-divider"></div><div class="t-block accent" style="--ac:var(--blue)"><div class="t-time"><span class="t-range mono">16:00-19:00</span><span class="t-dur mono">3h</span></div><div class="t-content" style="background:var(--bs)"><div><div class="t-title" style="color:var(--blue)">편집</div><div class="t-desc" style="color:var(--blue);opacity:.7">1개 완성</div></div></div></div><div class="t-divider"></div><div class="t-block accent" style="--ac:var(--pink)"><div class="t-time"><span class="t-range mono">19:00-21:00</span><span class="t-dur mono">2h</span></div><div class="t-content" style="background:var(--pks)"><div><div class="t-title" style="color:var(--pink)">저녁·영화</div><div class="t-desc" style="color:var(--pink);opacity:.7">쉬는시간</div></div></div></div><div class="t-divider"></div><div class="t-block accent" style="--ac:var(--amber)"><div class="t-time"><span class="t-range mono">21:00-24:00</span><span class="t-dur mono">3h</span></div><div class="t-content" style="background:var(--as)"><div><div class="t-title" style="color:var(--amber)">구직·숏폼</div><div class="t-desc" style="color:var(--amber);opacity:.7">자소서,기획안</div></div></div></div><div class="t-block " style="--ac:var(--td)"><div class="t-time"><span class="t-range mono">24:00~</span><span class="t-dur mono">free</span></div><div class="t-content" style="background:var(--s2)"><div><div class="t-title" style="color:var(--td)">자유시간</div></div></div></div><div class="t-block accent" style="--ac:var(--purple)"><div class="t-time"><span class="t-range mono">2:00</span><span class="t-dur mono">sleep</span></div><div class="t-content" style="background:var(--ps)"><div><div class="t-title" style="color:var(--purple)">취침</div></div></div></div></div>
+  <div style="max-width:680px;margin:32px auto 0">
+    <div class="hero-label mono" style="margin-bottom:12px">Weekly rotation</div>
+    <div class="rot-grid">
+      <div class="rot-cell" style="background:var(--ps)"><div class="rot-day mono" style="color:var(--purple)">MON</div><div class="rot-item" style="color:var(--purple)">도자기 정리</div></div>
+      <div class="rot-cell" style="background:var(--gs)"><div class="rot-day mono" style="color:var(--green)">TUE</div><div class="rot-item" style="color:var(--green)">책 읽기</div></div>
+      <div class="rot-cell" style="background:var(--ps)"><div class="rot-day mono" style="color:var(--purple)">WED</div><div class="rot-item" style="color:var(--purple)">도자기 정리</div></div>
+      <div class="rot-cell" style="background:var(--gs)"><div class="rot-day mono" style="color:var(--green)">THU</div><div class="rot-item" style="color:var(--green)">책 읽기</div></div>
+      <div class="rot-cell" style="background:var(--ps)"><div class="rot-day mono" style="color:var(--purple)">FRI</div><div class="rot-item" style="color:var(--purple)">도자기 정리</div></div>
+    </div>
+    <div style="margin-top:32px">
+      <div class="hero-label mono" style="margin-bottom:12px">Rules</div>
+      <div class="rule"><span class="rule-num mono" style="color:var(--coral)">01</span><span class="rule-text">하루 할 일 <strong>2개만</strong></span></div>
+      <div class="rule"><span class="rule-num mono" style="color:var(--blue)">02</span><span class="rule-text">편집 <strong>1개 완성</strong> 기준</span></div>
+      <div class="rule"><span class="rule-num mono" style="color:var(--pink)">03</span><span class="rule-text">저녁·영화 <strong>작업 금지</strong></span></div>
+      <div class="rule"><span class="rule-num mono" style="color:var(--amber)">04</span><span class="rule-text">미래 계획 <strong>주말에만</strong></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-lifeplan">
+  <div class="hero"><div class="hero-label mono">Life Plan</div><h1>Summer's <em>Blueprint</em></h1></div>
+  <div class="section-title">핵심 3축</div>
+  <div class="lp-grid">
+    <div class="lp-card" style="border-top:3px solid var(--blue)"><div class="lp-card-title" style="color:var(--blue)">주업</div><div class="lp-card-sub">고정 급여</div></div>
+    <div class="lp-card" style="border-top:3px solid var(--green)"><div class="lp-card-title" style="color:var(--green)">부업</div><div class="lp-card-sub">+100만원 숏폼</div></div>
+    <div class="lp-card" style="border-top:3px solid var(--purple)"><div class="lp-card-title" style="color:var(--purple)">브랜딩</div><div class="lp-card-sub">인스타→블로그→유튜브</div></div>
+  </div>
+  <div class="section-title">로드맵</div>
+  <div class="phase"><div class="phase-num mono" style="color:var(--coral)">P1</div><div><div class="phase-title">지금~취업</div><div class="phase-sub">구직+부업테스트</div></div></div>
+  <div class="phase"><div class="phase-num mono" style="color:var(--amber)">P2</div><div><div class="phase-title">취업 후</div><div class="phase-sub">인스타 시작</div></div></div>
+  <div class="phase"><div class="phase-num mono" style="color:var(--green)">P3</div><div><div class="phase-title">안정 후</div><div class="phase-sub">블로그</div></div></div>
+  <div class="phase"><div class="phase-num mono" style="color:var(--purple)">P4</div><div><div class="phase-title">여유 시</div><div class="phase-sub">유튜브</div></div></div>
+</div>
+
+<script>
+const MN=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const MK=['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+const SK='s2026v6';
+
+const DEF={
+0:[{name:'여수',items:[{t:'옹천생딸기모찌',d:0}]},{name:'💰 돈',items:[{t:'결혼자금 100',d:0},{t:'굴비적금 30',d:0},{t:'S&P100 10',d:0}]}],
+1:[{name:'🏥 건강/미용',items:[{t:'[병원] 급체',d:0},{t:'49kg',d:0},{t:'온뷰티 -보톡스,미백',d:0}]},{name:'💰 돈 벌고',items:[{t:'[240] 적조 220/우물우물 20',d:0},{t:'리뷰노트',d:0}]},{name:'💰 돈 모으기',items:[{t:'S&P/ETF/엔비디아 3주',d:0},{t:'ISA계좌',d:0},{t:'CMA -2000',d:0},{t:'굴비적금 30',d:0},{t:'결혼자금 100',d:0}]},{name:'🎉 놀기',items:[{t:'고성 여행',d:0},{t:'화랑대 스파',d:0},{t:'과메기 파티',d:0}]},{name:'📥 INPUT',items:[{t:'[영화] 씨너스,탑,3-2',d:0},{t:'[책] 영원에 빛을져서',d:0}]},{name:'💼 일',items:[{t:'숏폼 기획안',d:0},{t:'동그람이 편집',d:0}]},{name:'🍳 요리',items:[{t:'드라이카레',d:0},{t:'봄동비빔밥',d:0}]},{name:'🏠 부동산경매 — 준비',items:[{t:'유튜브 경매 입문 시청',d:0},{t:'부자아빠 읽기',d:0}]}],
+2:[{name:'🏋️ 건강',items:[{t:'49→48KG',d:0},{t:'러닝',d:0},{t:'폴댄스 3번',d:0}]},{name:'✍️ 창작',items:[{t:'시나리오 시놉시스',d:0},{t:'아빠 소설',d:0},{t:'동그람이 편집',d:0},{t:'우물우물 숏폼',d:0}]},{name:'💰 돈',items:[{t:'구직 250!',d:0},{t:'고정비100/결혼100/생활60',d:0},{t:'배당주, 공모주',d:0}]},{name:'💼 부업',items:[{t:'쇼핑 숏폼',d:0},{t:'편집 프리랜서',d:0},{t:'유튜브/인스타',d:0}]},{name:'🎨 생활',items:[{t:'도자기 DB',d:0},{t:'나스 복구!!',d:0},{t:'바이올린 수리',d:0}]},{name:'👥 사람',items:[{t:'보경',d:0},{t:'윤주와 동은',d:0}]},{name:'🏠 부동산경매 — 기초',items:[{t:'등기부등본 (갑구·을구)',d:0},{t:'말소기준권리',d:0},{t:'배당 순서',d:0},{t:'경매 용어',d:0},{t:'유튜브 강의',d:0},{t:'입문서 선정',d:0}]}],
+3:[{name:'🏋️ 건강',items:[{t:'48→47KG',d:0},{t:'건강검진',d:0},{t:'마라톤 하프',d:0}]},{name:'✍️ 창작',items:[{t:'트리트먼트 20장',d:0},{t:'에세이',d:0},{t:'프로크리에이트',d:0}]},{name:'💰 돈',items:[{t:'동그람이 CMA→ISA',d:0},{t:'고정급여-250',d:0},{t:'부업-30',d:0},{t:'ISA 서민형',d:0},{t:'LH, 행복주택',d:0}]},{name:'💼 부업',items:[{t:'블로그',d:0},{t:'도자기 인스타',d:0}]},{name:'👥 사람',items:[{t:'얼',d:0},{t:'고모 청주',d:0},{t:'현지 생일',d:0}]},{name:'🏠 부동산경매 — 임차인',items:[{t:'대항력 판별법',d:0},{t:'확정일자 vs 전입신고',d:0},{t:'소액임차인',d:0},{t:'인수 vs 소멸',d:0},{t:'입문서 정독',d:0},{t:'법원경매정보',d:0}]}],
+4:[{name:'🏋️ 건강',items:[{t:'46KG',d:0},{t:'유방검사',d:0},{t:'치과',d:0}]},{name:'✍️ 창작',items:[{t:'단편 시나리오!',d:0}]},{name:'💰 돈',items:[{t:'동그람이 5.10',d:0},{t:'고정급여-250',d:0},{t:'부업-30',d:0}]},{name:'🎉 체험',items:[{t:'발사믹 원데이',d:0},{t:'캠핑',d:0},{t:'경매 도전',d:0}]},{name:'🏠 부동산경매 — 고급 권리',items:[{t:'유치권',d:0},{t:'법정지상권',d:0},{t:'가처분·가등기',d:0},{t:'사례 분석 3건',d:0},{t:'모의 입찰 1~2건',d:0}]}],
+5:[{name:'🏥 건강',items:[{t:'제이디스 검진',d:0}]},{name:'💰 돈',items:[{t:'청년도약 (월50)',d:0},{t:'수퍼ISA (300)',d:0}]},{name:'🎨 생활',items:[{t:'테라스 꾸미기!!',d:0},{t:'바질 키우기',d:0},{t:'계곡 식당!!',d:0}]},{name:'🏠 부동산경매 — 모의 실전',items:[{t:'물건 3~5건 선정',d:0},{t:'등기부 권리분석',d:0},{t:'입찰가 산정',d:0},{t:'낙찰 추적',d:0},{t:'스터디 참여',d:0}]}],
+6:[{name:'✍️ 창작',items:[{t:'단편 촬영 2회차',d:0},{t:'소설 공모',d:0}]},{name:'🏠 부동산경매 — 실전 탐색',items:[{t:'소형물건 탐색',d:0},{t:'답사 주1회',d:0},{t:'대출 조건',d:0},{t:'시세 비교',d:0}]}],
+7:[{name:'🏠 부동산경매 — 물건 분석',items:[{t:'등기부 3건+',d:0},{t:'임차인 조사',d:0},{t:'답사+시세',d:0},{t:'입찰가 시뮬',d:0}]}],
+8:[{name:'🏠 부동산경매 — 입찰 준비',items:[{t:'물건 최종선정',d:0},{t:'자금계획',d:0},{t:'서류준비',d:0},{t:'권리분석 점검',d:0}]}],
+9:[{name:'🏠 부동산경매 — 첫 입찰!',items:[{t:'소액 1건 입찰!',d:0},{t:'결과 복기',d:0},{t:'재입찰 전략',d:0}]}],
+10:[{name:'🏠 부동산경매 — 낙찰 후',items:[{t:'대출 실행',d:0},{t:'잔금+소유권이전',d:0},{t:'명도 절차',d:0}]}],
+11:[{name:'🏠 부동산경매 — 마무리',items:[{t:'임대/매도 결정',d:0},{t:'전과정 복기',d:0},{t:'2027 전략',d:0}]}]
+};
+
+let data,openSt={};
+let history=[],historyIdx=-1;
+const MAX_HISTORY=50;
+
+function load(){const s=localStorage.getItem(SK);if(s)try{data=JSON.parse(s)}catch(e){data=JSON.parse(JSON.stringify(DEF))}else data=JSON.parse(JSON.stringify(DEF));for(let i=0;i<12;i++)if(!data[i])data[i]=[];history=[JSON.stringify(data)];historyIdx=0}
+
+function save(){
+  localStorage.setItem(SK,JSON.stringify(data));
+  const snap=JSON.stringify(data);
+  if(historyIdx<history.length-1)history=history.slice(0,historyIdx+1);
+  history.push(snap);
+  if(history.length>MAX_HISTORY)history.shift();
+  historyIdx=history.length-1;
+  updateUndoRedoBtns();
+  const e=document.getElementById('saveInd');e.classList.add('show');setTimeout(()=>e.classList.remove('show'),1500);
+}
+
+function undo(){
+  if(historyIdx<=0)return;
+  historyIdx--;
+  data=JSON.parse(history[historyIdx]);
+  localStorage.setItem(SK,JSON.stringify(data));
+  updateUndoRedoBtns();render();
+  flashSave('↩ undo');
+}
+
+function redo(){
+  if(historyIdx>=history.length-1)return;
+  historyIdx++;
+  data=JSON.parse(history[historyIdx]);
+  localStorage.setItem(SK,JSON.stringify(data));
+  updateUndoRedoBtns();render();
+  flashSave('↪ redo');
+}
+
+function updateUndoRedoBtns(){
+  document.getElementById('undoBtn').disabled=historyIdx<=0;
+  document.getElementById('redoBtn').disabled=historyIdx>=history.length-1;
+}
+
+function flashSave(txt){
+  const e=document.getElementById('saveInd');
+  e.textContent=txt||'✓ saved';
+  e.classList.add('show');
+  setTimeout(()=>{e.classList.remove('show');e.textContent='✓ saved'},1500);
+}
+
+document.addEventListener('keydown',e=>{
+  if((e.ctrlKey||e.metaKey)&&e.key==='z'&&!e.shiftKey){e.preventDefault();undo()}
+  if((e.ctrlKey||e.metaKey)&&(e.key==='y'||(e.key==='z'&&e.shiftKey))){e.preventDefault();redo()}
+});
+function gk(m,g){return m+'-'+g}
+function isOp(m,g){return openSt[gk(m,g)]!==false}
+function cntM(m){let c=0,d=0;(data[m]||[]).forEach(g=>g.items.forEach(i=>{c++;if(i.d)d++}));return{c,d}}
+
+function render(){
+  const grid=document.getElementById('monthGrid');grid.innerHTML='';
+  for(let m=0;m<12;m++){
+    const{c,d}=cntM(m);const card=document.createElement('div');card.className='mc';card.dataset.month=m;
+    let h=`<div class="mh"><span class="mn">${MN[m]}<small>${MK[m]}</small></span><span class="mc-ct" id="ct-${m}">${d}/${c}</span></div>`;
+    (data[m]||[]).forEach((g,gi)=>{
+      const op=isOp(m,gi);
+      if(g.name){
+        h+=`<div class="grp" data-m="${m}" data-g="${gi}"><div class="gh">
+          <span class="gh-drag" data-m="${m}" data-g="${gi}" title="꾹 눌러 드래그">⠿</span>
+          <span class="ga ${op?'open':''}" onclick="togGrp(${m},${gi},this.parentElement)">▶</span>
+          <span class="gn" onclick="togGrp(${m},${gi},this.parentElement)" ondblclick="event.stopPropagation();editGrp(${m},${gi},this)">${g.name}</span>
+          <span class="gc">${g.items.length}</span>
+          <button class="gd" onclick="event.stopPropagation();delGrp(${m},${gi})">✕</button>
+        </div><div class="gb ${op?'':'closed'}">`;
+      }
+      g.items.forEach((it,ii)=>{
+        h+=`<div class="ti" data-m="${m}" data-g="${gi}" data-i="${ii}">
+          <input type="checkbox" ${it.d?'checked':''} onchange="tog(${m},${gi},${ii},this)">
+          <span class="tt ${it.d?'done':''}" ondblclick="editItem(${m},${gi},${ii},this)">${it.t}</span>
+          <span class="btns">
+            <button class="ib del" onclick="delItem(${m},${gi},${ii})">✕</button>
+          </span>
+        </div>`;
+      });
+      if(g.name)h+='</div></div>';
+    });
+    h+=`<div class="add-row"><input placeholder="할 일..." id="inp-${m}" onkeydown="if(event.key==='Enter')addItem(${m})"><button onclick="addItem(${m})">+할일</button><button onclick="addGrp(${m})">+그룹</button></div>`;
+    card.innerHTML=h;grid.appendChild(card);
+  }
+  initDrag();
+}
+
+/* ═══════════════════════════════════════════
+   CUSTOM POINTER DRAG — items + groups
+   Hold 200ms to drag. Tap/dblclick pass through.
+   ═══════════════════════════════════════════ */
+let drag={active:false,el:null,ghost:null,src:null,mode:null,startX:0,startY:0,started:false,dropLine:null,holdTimer:null,pid:null};
+
+function initDrag(){
+  document.querySelectorAll('.ti').forEach(el=>{
+    el.addEventListener('pointerdown',e=>startDragSetup(e,el,'item'),{passive:false});
+  });
+  document.querySelectorAll('.gh-drag').forEach(el=>{
+    el.addEventListener('pointerdown',e=>startDragSetup(e,el,'group'),{passive:false});
+  });
+}
+
+function startDragSetup(e,el,mode){
+  if(e.target.tagName==='INPUT'||e.target.tagName==='BUTTON'||e.target.closest('.btns')||e.target.classList.contains('tt-edit'))return;
+  const srcEl=mode==='item'?el:el.closest('.grp');
+  drag.el=srcEl;drag.pid=e.pointerId;drag.mode=mode;
+  if(mode==='item'){
+    drag.src={m:+el.dataset.m,g:+el.dataset.g,i:+el.dataset.i};
+    drag.active=true;
+  }else{
+    e.preventDefault();
+    drag.src={m:+el.dataset.m,g:+el.dataset.g};
+    drag.active=false;
+    drag.holdTimer=setTimeout(()=>{
+      drag.active=true;
+      try{srcEl.setPointerCapture(drag.pid)}catch(ex){}
+    },150);
+  }
+  drag.startX=e.clientX;drag.startY=e.clientY;
+  drag.started=false;
+  document.addEventListener('pointermove',onPointerMove);
+  document.addEventListener('pointerup',onPointerUp);
+  document.addEventListener('pointercancel',onPointerUp);
+}
+
+function onPointerMove(e){
+  const dx=e.clientX-drag.startX,dy=e.clientY-drag.startY;
+  if(!drag.active){
+    if(Math.abs(dx)+Math.abs(dy)>6){clearTimeout(drag.holdTimer);cleanupDrag()}
+    return;
+  }
+  if(!drag.started&&Math.abs(dx)+Math.abs(dy)<5)return;
+  e.preventDefault();
+  if(!drag.started){
+    drag.started=true;
+    document.body.classList.add('dragging');
+    drag.el.classList.add('drag-source');
+    try{drag.el.setPointerCapture(drag.pid)}catch(ex){}
+    drag.ghost=document.createElement('div');
+    drag.ghost.className='drag-ghost';
+    if(drag.mode==='item'){
+      drag.ghost.textContent=data[drag.src.m][drag.src.g].items[drag.src.i].t;
+    }else{
+      drag.ghost.textContent='📁 '+data[drag.src.m][drag.src.g].name;
+      drag.ghost.style.borderColor='var(--amber)';drag.ghost.style.color='var(--amber)';
+    }
+    document.body.appendChild(drag.ghost);
+  }
+  drag.ghost.style.left=e.clientX+'px';
+  drag.ghost.style.top=e.clientY+'px';
+  clearIndicators();
+  const target=getDropTarget(e.clientX,e.clientY);
+  if(target)showIndicator(target);
+}
+
+function onPointerUp(e){
+  clearTimeout(drag.holdTimer);
+  if(drag.started){
+    const target=getDropTarget(e.clientX,e.clientY);
+    if(target)executeDrop(target);
+    if(drag.ghost)drag.ghost.remove();
+    if(drag.el)drag.el.classList.remove('drag-source');
+    document.body.classList.remove('dragging');
+    clearIndicators();
+  }
+  cleanupDrag();
+}
+
+function cleanupDrag(){
+  document.removeEventListener('pointermove',onPointerMove);
+  document.removeEventListener('pointerup',onPointerUp);
+  document.removeEventListener('pointercancel',onPointerUp);
+  drag={active:false,el:null,ghost:null,src:null,mode:null,startX:0,startY:0,started:false,dropLine:null,holdTimer:null,pid:null};
+}
+
+function getDropTarget(x,y){
+  if(drag.ghost)drag.ghost.style.display='none';
+  const el=document.elementFromPoint(x,y);
+  if(drag.ghost)drag.ghost.style.display='';
+  if(!el)return null;
+
+  if(drag.mode==='item'){
+    const ti=el.closest('.ti');
+    if(ti&&ti!==drag.el){
+      const rect=ti.getBoundingClientRect();
+      return{type:'item',el:ti,m:+ti.dataset.m,g:+ti.dataset.g,i:+ti.dataset.i,above:y<rect.top+rect.height/2};
+    }
+    const grp=el.closest('.grp');
+    if(grp){
+      const m=+grp.dataset.m,g=+grp.dataset.g;
+      if(!(m===drag.src.m&&g===drag.src.g&&data[m][g].items.length===1))
+        return{type:'group',el:grp,m,g};
+    }
+    const mc=el.closest('.mc');
+    if(mc)return{type:'month',el:mc,m:+mc.dataset.month};
+  }
+
+  if(drag.mode==='group'){
+    const grp=el.closest('.grp');
+    if(grp&&grp!==drag.el){
+      const m=+grp.dataset.m,g=+grp.dataset.g;
+      const rect=grp.getBoundingClientRect();
+      return{type:'grp-reorder',el:grp,m,g,above:y<rect.top+rect.height/2};
+    }
+    const mc=el.closest('.mc');
+    if(mc){
+      const m=+mc.dataset.month;
+      if(m!==drag.src.m)return{type:'grp-month',el:mc,m};
+    }
+  }
+  return null;
+}
+
+function showIndicator(t){
+  if(t.type==='item'){
+    if(drag.dropLine)drag.dropLine.remove();
+    drag.dropLine=document.createElement('div');
+    drag.dropLine.className='drop-line';
+    if(t.above)t.el.before(drag.dropLine);else t.el.after(drag.dropLine);
+  }else if(t.type==='grp-reorder'){
+    if(drag.dropLine)drag.dropLine.remove();
+    drag.dropLine=document.createElement('div');
+    drag.dropLine.className='drop-line-grp';
+    if(t.above)t.el.before(drag.dropLine);else t.el.after(drag.dropLine);
+  }else if(t.type==='group'){
+    t.el.classList.add('drop-target');
+  }else if(t.type==='month'||t.type==='grp-month'){
+    t.el.classList.add('drop-target');
+  }
+}
+
+function clearIndicators(){
+  if(drag.dropLine){drag.dropLine.remove();drag.dropLine=null}
+  document.querySelectorAll('.drop-target').forEach(e=>e.classList.remove('drop-target'));
+}
+
+function executeDrop(t){
+  const s=drag.src;
+
+  if(drag.mode==='item'){
+    const item=data[s.m][s.g].items.splice(s.i,1)[0];
+    if(!data[s.m][s.g].items.length&&!data[s.m][s.g].name)data[s.m].splice(s.g,1);
+    if(t.type==='item'){
+      let idx=t.above?t.i:t.i+1;
+      if(s.m===t.m&&s.g===t.g&&s.i<t.i)idx--;
+      data[t.m][t.g].items.splice(Math.max(0,idx),0,item);
+    }else if(t.type==='group'){
+      data[t.m][t.g].items.push(item);
+      openSt[gk(t.m,t.g)]=true;
+    }else if(t.type==='month'){
+      let ug=data[t.m].find(g=>!g.name);
+      if(!ug){ug={name:'',items:[]};data[t.m].push(ug)}
+      ug.items.push(item);
+    }
+  }
+
+  if(drag.mode==='group'){
+    const grp=data[s.m].splice(s.g,1)[0];
+    if(t.type==='grp-reorder'){
+      let idx=t.above?t.g:t.g+1;
+      if(s.m===t.m&&s.g<t.g)idx--;
+      data[t.m].splice(Math.max(0,idx),0,grp);
+    }else if(t.type==='grp-month'){
+      data[t.m].push(grp);
+    }
+  }
+
+  save();render();
+}
+
+/* ─── ITEM ACTIONS ─── */
+function tog(m,g,i,cb){data[m][g].items[i].d=cb.checked?1:0;cb.nextElementSibling.classList.toggle('done',cb.checked);const{c,d}=cntM(m);document.getElementById('ct-'+m).textContent=d+'/'+c;save()}
+function togGrp(m,g,ghEl){const b=ghEl.nextElementSibling,a=ghEl.querySelector('.ga');const now=!b.classList.contains('closed');b.classList.toggle('closed',now);a.classList.toggle('open',!now);openSt[gk(m,g)]=!now}
+function setAllGrp(op){document.querySelectorAll('.gb').forEach(b=>{op?b.classList.remove('closed'):b.classList.add('closed')});document.querySelectorAll('.ga').forEach(a=>{op?a.classList.add('open'):a.classList.remove('open')});for(let m=0;m<12;m++)(data[m]||[]).forEach((_,g)=>{openSt[gk(m,g)]=op})}
+function addItem(m){const inp=document.getElementById('inp-'+m),t=inp.value.trim();if(!t)return;let ug=data[m].find(g=>!g.name);if(!ug){ug={name:'',items:[]};data[m].push(ug)}ug.items.push({t,d:0});inp.value='';save();render()}
+function addGrp(m){const n=prompt('그룹 이름:');if(!n)return;data[m].push({name:n,items:[]});openSt[gk(m,data[m].length-1)]=true;save();render()}
+function delItem(m,g,i){data[m][g].items.splice(i,1);if(!data[m][g].items.length&&!data[m][g].name)data[m].splice(g,1);save();render()}
+function delGrp(m,g){if(!confirm('그룹 전체 삭제?'))return;data[m].splice(g,1);save();render()}
+function editItem(m,g,i,el){const c=data[m][g].items[i].t;const inp=document.createElement('input');inp.className='tt-edit';inp.value=c;inp.onblur=()=>{data[m][g].items[i].t=inp.value.trim()||c;save();render()};inp.onkeydown=e=>{if(e.key==='Enter')inp.blur();if(e.key==='Escape'){inp.value=c;inp.blur()}};el.innerHTML='';el.appendChild(inp);inp.focus()}
+function editGrp(m,g,el){const c=data[m][g].name;const inp=document.createElement('input');inp.className='tt-edit';inp.value=c;inp.onblur=()=>{data[m][g].name=inp.value.trim()||c;save();render()};inp.onkeydown=e=>{if(e.key==='Enter')inp.blur();if(e.key==='Escape'){inp.value=c;inp.blur()}};el.innerHTML='';el.appendChild(inp);inp.focus()}
+function filterTasks(q){q=q.toLowerCase();document.querySelectorAll('.ti').forEach(e=>{e.style.display=e.textContent.toLowerCase().includes(q)?'':'none'})}
+function exportData(){const b=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='summer_2026.json';a.click()}
+function importData(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{try{data=JSON.parse(ev.target.result);save();render();alert('완료!')}catch(err){alert('오류')}};r.readAsText(f)}
+
+const TL=[{r:'9:00-9:40',d:'40m',ti:'운동',ds:'매일 고정',co:'green',a:1},{r:'9:40-10:00',d:'20m',ti:'씻기·정비',co:'',a:0},{r:'10:00-11:00',d:'1h',ti:'도자기/책',ds:'로테이션',co:'purple',a:1},{div:1},{r:'11:00-13:00',d:'2h',ti:'글쓰기 1',ds:'오전 집중',co:'coral',a:1},{r:'13:00-13:30',d:'30m',ti:'휴식',co:'',a:0},{r:'13:30-16:00',d:'2.5h',ti:'글쓰기 2',co:'coral',a:1},{div:1},{r:'16:00-19:00',d:'3h',ti:'편집',ds:'1개 완성',co:'blue',a:1},{div:1},{r:'19:00-21:00',d:'2h',ti:'저녁·영화',ds:'쉬는시간',co:'pink',a:1},{div:1},{r:'21:00-24:00',d:'3h',ti:'구직·숏폼',ds:'자소서,기획안',co:'amber',a:1},{r:'24:00~',d:'free',ti:'자유시간',co:'',a:0},{r:'2:00',d:'sleep',ti:'취침',co:'purple',a:1}];
+const CM={coral:['var(--coral)','var(--cs)'],blue:['var(--blue)','var(--bs)'],amber:['var(--amber)','var(--as)'],purple:['var(--purple)','var(--ps)'],green:['var(--green)','var(--gs)'],pink:['var(--pink)','var(--pks)']};
+function renderTL(){document.getElementById('tlC').innerHTML=TL.map(i=>{if(i.div)return'<div class="t-divider"></div>';const c=CM[i.co];const bg=c?c[1]:'var(--s2)';const fg=c?c[0]:'var(--td)';return`<div class="t-block ${i.a?'accent':''}" style="--ac:${fg}"><div class="t-time"><span class="t-range mono">${i.r}</span><span class="t-dur mono">${i.d}</span></div><div class="t-content" style="background:${bg}"><div><div class="t-title" style="color:${fg}">${i.ti}</div>${i.ds?`<div class="t-desc" style="color:${fg};opacity:.7">${i.ds}</div>`:''}</div></div></div>`}).join('')}
+function showPage(id,btn){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));if(btn)btn.classList.add('active')}
+
+load();render();renderTL();
+</script>
+
+
+</body></html>
